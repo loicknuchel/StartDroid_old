@@ -1,14 +1,14 @@
 package com.knuchel.start.android;
 
-import com.knuchel.start.android.config.Config;
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceActivity;
 import android.widget.Toast;
+
+import com.knuchel.start.android.config.Config;
 
 public class SampleSettingsActivity extends PreferenceActivity {
 	@Override

@@ -1,15 +1,13 @@
 package com.knuchel.start.android;
 
-import com.knuchel.start.android.config.Config;
-import com.sfeir.android.friendapps.FriendListActivity;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceActivity;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
 public class SettingsActivity extends PreferenceActivity {
@@ -30,7 +28,21 @@ public class SettingsActivity extends PreferenceActivity {
 		Preference AboutPref = (Preference) findPreference("AboutPref");
 		AboutPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getBaseContext(), "AboutPref clicked", Toast.LENGTH_SHORT).show();
+				LayoutInflater factory = LayoutInflater.from(SettingsActivity.this);
+            	final View alertDialogView = factory.inflate(R.layout.alertdialogabout, null);
+            	
+            	AlertDialog.Builder adb = new AlertDialog.Builder(SettingsActivity.this);
+            	adb.setView(alertDialogView);
+            	adb.setTitle(getResources().getString(R.string.abouttitle));
+            	adb.setIcon(R.drawable.about);
+            	adb.setPositiveButton(getResources().getString(R.string.validate), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    	
+                    }
+                });
+            	
+                adb.show();
+				
 				return true;
 			}
 		});
@@ -55,10 +67,6 @@ public class SettingsActivity extends PreferenceActivity {
 		FriendPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
 				Toast.makeText(getBaseContext(), "FriendPref clicked", Toast.LENGTH_SHORT).show();
-				Intent i = new Intent(getBaseContext(), FriendListActivity.class);
-				i.putExtra("mail", Config.FA_MAIL);
-				i.putExtra("listId", Config.FA_LIST);
-				startActivity(i);
 				return true;
 			}
 		});

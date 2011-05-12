@@ -1,0 +1,40 @@
+   _____ _              _   _____            _     _ 
+  / ____| |            | | |  __ \          (_)   | |
+ | (___ | |_  __ _ _ __| |_| |  | |_ __ ___  _  __| |
+  \___ \| __|/ _` | '__| __| |  | | '__/ _ \| |/ _` |
+  ____) | |_| (_| | |  | |_| |__| | | | (_) | | (_| |
+ |_____/ \__|\__,_|_|   \__|_____/|_|  \___/|_|\__,_|
+
+	StartDroid est un starter de projet Android.
+
+StartDroid est un projet Android complet qui a pour rôle de servir de base pour tout nouveau projet.
+Il intègre un certain nombre d'éléments très souvents utilisés lors des projets Android tels que :
+	- les menus et sous menus
+	- les préférences
+	- la vérification de la présence du réseau
+
+Démarrer un projet avec StartDroid vous permettra d'une part d'avoir une base pour de nombreuses 
+fonctionnalités et d'autre part d'en découvrir de nouvelles déjà implémentées dans votre projet.
+
+Pour toute remarque, suggestion ou bug vous pouvez me contacter par mail : loicknuchel@gmail.com
+ou sur twitter : @loicknuchel
+
+Liste des fonctionnalités à venir :
+	- dashboard
+	- tab activity
+	- status bar
+	- quick action bar
+	- sqlite
+	- broadcast receiver
+	- exemples de services (scanner, photo, contacts...)
+	- service rest
+	- async task
+	- gestion du changement d'orientation du téléphone (portrait/paysage)
+	- login par le compte google
+	
+A noter : 
+	le code est volontairement peu commenté. 
+	Il s'agit d'un simple starter de projet et non code d'exemple à vocation pédagogique.
+	Toutefois, en fonction des retours et des demandes, je pourrais mettre plus de commentaires explicatifs 
+	et orienter les fonctionnalités.
+

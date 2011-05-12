@@ -2,6 +2,13 @@
 <resources>
     <string name="app_name">StartDroid</string>
     
+    <string name="testFeature">Launch test</string>
+    <string name="goDashboard">Dashboard</string>
+    <string name="samplesettings">Sample Settings</string>
+    <string name="goSampleSettings">Sample Prefs</string>
+    <string name="readSampleSettings">Read Sample Pref</string>
+    <string name="isNetworkAvailable">Network available</string>
+    
     <string name="helppreftitle">Aide</string>
     <string name="faqpref">FAQ</string>
     <string name="aboutpref">A propos</string>
@@ -12,15 +19,30 @@
     <string name="closepreftitle">Quitter</string>
     <string name="closepref">Quitter l\'application</string>
     
-    <string name="menusettings">Settings</string>
-    <string name="menuhelp">Help</string>
+    <string name="menusettings">Préférences</string>
+    <string name="menuhelp">Aide</string>
     <string name="sousmenufaq">FAQ</string>
-    <string name="sousmenuabout">About</string>
+    <string name="sousmenuabout">A propos</string>
+
+    <string name="abouttitle">A propos</string>
+    <string name="aboutcontent">
+    	Ceci est la section about de l\'application
+    	\n
+    	\nVous pouvez mettre ici tout ce que vous voulez, qui vous êtes, ce que vous faisez, 
+    	les buts de l\'application, le contenu des différentes mises a jour et beaucoup d\'autres choses.
+    	\n
+    	\n
+    	\n<b>Cette section est là pour vous :)</b>
+    	\nLà je remplis cette section pour voir ce que fais cette dialog box si le texte dépasse.
+    	\n
+    	\nEn tous cas, j\'espère que vous appréciez ce petit starter avec des options sympatiques.
+    	\nJ\'ai vraiment plus d\'idée sur ce que je pourrais dire, j\'espère que le contenu sera assez long
+    	parce que ça commence à être relou de taper...
+    	\n
+    	\nEncore un peu de texte pour la forme et le volume...
+    </string>
     
-    <string name="samplesettings">Sample Settings</string>
     <string name="retBtn">Retour</string>
     <string name="prefs">Préférences</string>
-    <string name="goSampleSettings">Sample Prefs</string>
-    <string name="readSampleSettings">Read Sample Pref</string>
-    <string name="isNetworkAvailable">Network available</string>
+    <string name="validate">OK</string>
 </resources>

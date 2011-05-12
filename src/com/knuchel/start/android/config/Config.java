@@ -1,9 +1,6 @@
 package com.knuchel.start.android.config;
 
 public class Config {
-	public static final String FA_MAIL = "loicknuchel@gmail.com";
-	public static final String FA_LIST = "GoQrCode";
-
 	public static final String PREFS = "StartDroidPrefs";
 
 	public static final String SAMPLE_PREFS = "customPref";
