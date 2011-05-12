@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference
+		android:title="Preference Activated"
+		android:summary="This is a test to have some preferences"
+		android:key="firstPref"
+		android:defaultValue="false" />
+	
+	<PreferenceCategory android:title="@string/helppreftitle">
+		<Preference
+			android:title="@string/faqpref"
+			android:key="FAQPref" />
+		<Preference
+			android:title="@string/aboutpref"
+			android:key="AboutPref" />
+	</PreferenceCategory>
+	
+	<PreferenceCategory android:title="@string/severalpreftitle">
+		<Preference
+			android:title="@string/feedbackpref"
+			android:key="FeedbackPref" />
+		<Preference
+			android:title="@string/sharepref"
+			android:key="SharePref" />
+		<Preference
+			android:title="@string/friendpref"
+			android:key="FriendPref" />
+	</PreferenceCategory>
+	
+	<PreferenceCategory android:title="@string/closepreftitle">
+		<Preference
+			android:title="@string/closepref"
+			android:key="ClosePref" />
+	</PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StartDroid</string>
+    
+    <string name="helppreftitle">Aide</string>
+    <string name="faqpref">FAQ</string>
+    <string name="aboutpref">A propos</string>
+    <string name="severalpreftitle">Divers</string>
+    <string name="feedbackpref">Donnez votre avis</string>
+    <string name="sharepref">Partager l\'application</string>
+    <string name="friendpref">Applications amies</string>
+    <string name="closepreftitle">Quitter</string>
+    <string name="closepref">Quitter l\'application</string>
+    
+    <string name="menusettings">Settings</string>
+    <string name="menuhelp">Help</string>
+    <string name="sousmenufaq">FAQ</string>
+    <string name="sousmenuabout">About</string>
+    
+    <string name="samplesettings">Sample Settings</string>
+    <string name="retBtn">Retour</string>
+    <string name="prefs">Préférences</string>
+    <string name="goSampleSettings">Sample Prefs</string>
+    <string name="readSampleSettings">Read Sample Pref</string>
+    <string name="isNetworkAvailable">Network available</string>
+</resources>

@@ -1,0 +1,23 @@
+package com.knuchel.start.android.config;
+
+public class Config {
+	public static final String FA_MAIL = "loicknuchel@gmail.com";
+	public static final String FA_LIST = "GoQrCode";
+
+	public static final String PREFS = "StartDroidPrefs";
+
+	public static final String SAMPLE_PREFS = "customPref";
+	public static final String SAMPLE_PREFS2 = "myCustomSharedPrefs";
+	public static final String SAMPLE_PREFS_NAME_CHECKBOX = "checkboxPref";
+	public static final Boolean SAMPLE_PREFS_DEFAULTVALUE_CHECKBOX = true;
+	public static final String SAMPLE_PREFS_NAME_LIST = "listPref";
+	public static final String SAMPLE_PREFS_DEFAULTVALUE_LIST = "nr1";
+	public static final String SAMPLE_PREFS_NAME_EDITTEXT = "editTextPref";
+	public static final String SAMPLE_PREFS_DEFAULTVALUE_EDITTEXT = "Nothing has been entered";
+	public static final String SAMPLE_PREFS_NAME_RINGTONE = "ringtonePref";
+	public static final String SAMPLE_PREFS_DEFAULTVALUE_RINGTONE = "DEFAULT_RINGTONE_URI";
+	public static final String SAMPLE_PREFS_NAME_SECONDEDITTEXT = "SecondEditTextPref";
+	public static final String SAMPLE_PREFS_DEFAULTVALUE_SECONDEDITTEXT = "Nothing has been entered";
+	public static final String SAMPLE_PREFS_NAME_CUSTOM = "myCusomPref";
+	public static final String SAMPLE_PREFS_DEFAULTVALUE_CUSTOM = "Default for custom";
+}
