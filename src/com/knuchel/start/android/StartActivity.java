@@ -16,9 +16,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
 import com.knuchel.start.android.config.Config;
 import com.knuchel.start.android.model.SamplePrefs;
-import com.knuchel.start.android.popup.AboutPopup;
 import com.knuchel.start.android.utils.Network;
 
 /*
@@ -55,7 +55,7 @@ public class StartActivity extends Activity {
 	private void onCLickValidate(){
 		test.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-            	Toast.makeText(getBaseContext(), "No test !!!", Toast.LENGTH_SHORT).show();
+            	Toast.makeText(getBaseContext(), "Test !!!", Toast.LENGTH_SHORT).show();
             }
 		});
 		

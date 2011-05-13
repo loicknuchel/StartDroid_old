@@ -15,6 +15,7 @@ Il intègre un certain nombre d'éléments très souvents utilisés lors des pro
 	- possibilité de réinitialiser l'appli
 	- la vérification de la présence du réseau
 	- popup about
+	- dashboard
 	- tab activity
 
 Démarrer un projet avec StartDroid vous permettra d'une part d'avoir une base pour de nombreuses 
@@ -24,8 +25,7 @@ Pour toute remarque, suggestion ou bug vous pouvez me contacter par mail : loick
 ou sur twitter : @loicknuchel
 
 Liste des fonctionnalités à venir :
-	- dashboard
-	- status bar
+	- action bar
 	- quick action bar
 	- sqlite
 	- broadcast receiver

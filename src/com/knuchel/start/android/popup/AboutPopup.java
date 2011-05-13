@@ -8,14 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.knuchel.start.android.R;
-import com.knuchel.start.android.SettingsActivity;
 
 public class AboutPopup extends Activity {
 	/*
 	 * NOT WORKING !!! 
 	 * HOW TO DO ?
 	 */
-	public void display(Context c){
+	public final void display(Context c){
 		LayoutInflater factory = LayoutInflater.from(c);
     	final View alertDialogView = factory.inflate(R.layout.alertdialogabout, null);
     	

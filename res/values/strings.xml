@@ -53,4 +53,10 @@
     <string name="retBtn">Retour</string>
     <string name="prefs">Préférences</string>
     <string name="validate">OK</string>
+    
+    
+    <string name="activity_add">add</string>
+    <string name="activity_viewall">view</string>
+    <string name="activity_manage">manage</string>
+    <string name="activity_personalbests">bests</string>
 </resources>

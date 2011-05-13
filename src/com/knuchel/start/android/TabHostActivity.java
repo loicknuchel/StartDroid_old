@@ -1,4 +1,5 @@
 package com.knuchel.start.android;
+//TUTO : http://www.ace-art.fr/wordpress/2010/10/13/tutoriel-android-partie-11-les-tabhost/
 
 import android.app.TabActivity;
 import android.content.Intent;
