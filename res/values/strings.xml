@@ -3,7 +3,8 @@
     <string name="app_name">StartDroid</string>
     
     <string name="testFeature">Launch test</string>
-    <string name="goDashboard">Dashboard</string>
+    <string name="goDashboard">Dashboard Activity</string>
+    <string name="goTabActivity">Tab Activity</string>
     <string name="samplesettings">Sample Settings</string>
     <string name="goSampleSettings">Sample Prefs</string>
     <string name="readSampleSettings">Read Sample Pref</string>
@@ -16,14 +17,21 @@
     <string name="feedbackpref">Donnez votre avis</string>
     <string name="sharepref">Partager l\'application</string>
     <string name="friendpref">Applications amies</string>
+    <string name="initpref">Réinitialiser l\'application</string>
     <string name="closepreftitle">Quitter</string>
     <string name="closepref">Quitter l\'application</string>
+    <string name="initappdone">Application réinitialisée</string>
     
     <string name="menusettings">Préférences</string>
     <string name="menuhelp">Aide</string>
     <string name="sousmenufaq">FAQ</string>
     <string name="sousmenuabout">A propos</string>
 
+    <string name="starttitle">Attention</string>
+    <string name="startcontent">
+    	Cette popup ne s\'ouvre que lors du premier lancement.
+    	Vous pouvez la revoir si vous réinitialisez l\'application dans les préférences.
+    </string>
     <string name="abouttitle">A propos</string>
     <string name="aboutcontent">
     	Ceci est la section about de l\'application

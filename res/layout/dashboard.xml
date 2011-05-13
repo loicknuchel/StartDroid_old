@@ -5,7 +5,7 @@
 	android:layout_height="fill_parent">
 	
 	<Button
-	    android:id="@+id/helpRetBtn"
+	    android:id="@+id/dashboardRetBtn"
 	    android:text="@string/retBtn"
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content"

@@ -1,7 +1,10 @@
 package com.knuchel.start.android;
 
+import com.knuchel.start.android.config.Config;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -32,16 +35,15 @@ public class SettingsActivity extends PreferenceActivity {
             	final View alertDialogView = factory.inflate(R.layout.alertdialogabout, null);
             	
             	AlertDialog.Builder adb = new AlertDialog.Builder(SettingsActivity.this);
-            	adb.setView(alertDialogView);
-            	adb.setTitle(getResources().getString(R.string.abouttitle));
-            	adb.setIcon(R.drawable.about);
-            	adb.setPositiveButton(getResources().getString(R.string.validate), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    	
-                    }
-                });
-            	
-                adb.show();
+            	adb.setView(alertDialogView)
+            		.setTitle(getResources().getString(R.string.abouttitle))
+            		.setIcon(R.drawable.about)
+            		.setPositiveButton(getResources().getString(R.string.validate), new DialogInterface.OnClickListener() {
+	                    public void onClick(DialogInterface dialog, int which) {
+	                    	
+	                    }
+            		})
+            		.show();
 				
 				return true;
 			}
@@ -67,6 +69,17 @@ public class SettingsActivity extends PreferenceActivity {
 		FriendPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
 				Toast.makeText(getBaseContext(), "FriendPref clicked", Toast.LENGTH_SHORT).show();
+				return true;
+			}
+		});
+
+		Preference InitPref = (Preference) findPreference("InitPref");
+		InitPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			public boolean onPreferenceClick(Preference preference) {
+				final SharedPreferences.Editor editor = getSharedPreferences(Config.PREFS, 0).edit();
+		    	editor.putBoolean(Config.PREFS_SHOW_START_POPUP, true);
+		    	editor.commit();
+				Toast.makeText(getBaseContext(), getResources().getString(R.string.initappdone), Toast.LENGTH_LONG).show();
 				return true;
 			}
 		});

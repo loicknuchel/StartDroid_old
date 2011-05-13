@@ -25,6 +25,9 @@
 		<Preference
 			android:title="@string/friendpref"
 			android:key="FriendPref" />
+		<Preference
+			android:title="@string/initpref"
+			android:key="InitPref" />
 	</PreferenceCategory>
 	
 	<PreferenceCategory android:title="@string/closepreftitle">

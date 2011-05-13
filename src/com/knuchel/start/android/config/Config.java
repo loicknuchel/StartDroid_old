@@ -2,6 +2,7 @@ package com.knuchel.start.android.config;
 
 public class Config {
 	public static final String PREFS = "StartDroidPrefs";
+	public static final String PREFS_SHOW_START_POPUP = "StartPopup";
 
 	public static final String SAMPLE_PREFS = "customPref";
 	public static final String SAMPLE_PREFS2 = "myCustomSharedPrefs";

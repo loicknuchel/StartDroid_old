@@ -19,7 +19,7 @@ public class DashboardActivity extends Activity {
 	}
 
 	protected void setUp() {
-		retBtn = (Button) findViewById(R.id.helpRetBtn);
+		retBtn = (Button) findViewById(R.id.dashboardRetBtn);
 	}
 	
 	private void onCLickValidate(){

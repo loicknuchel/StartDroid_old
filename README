@@ -11,7 +11,11 @@ StartDroid est un projet Android complet qui a pour rôle de servir de base pour
 Il intègre un certain nombre d'éléments très souvents utilisés lors des projets Android tels que :
 	- les menus et sous menus
 	- les préférences
+	- popup d'aide au 1er lancement de l'appli
+	- possibilité de réinitialiser l'appli
 	- la vérification de la présence du réseau
+	- popup about
+	- tab activity
 
 Démarrer un projet avec StartDroid vous permettra d'une part d'avoir une base pour de nombreuses 
 fonctionnalités et d'autre part d'en découvrir de nouvelles déjà implémentées dans votre projet.
@@ -21,7 +25,6 @@ ou sur twitter : @loicknuchel
 
 Liste des fonctionnalités à venir :
 	- dashboard
-	- tab activity
 	- status bar
 	- quick action bar
 	- sqlite
@@ -29,6 +32,10 @@ Liste des fonctionnalités à venir :
 	- exemples de services (scanner, photo, contacts...)
 	- service rest
 	- async task
+	- thème personnalisé
+	- widget sample
+	- acra
+	- analytics
 	- gestion du changement d'orientation du téléphone (portrait/paysage)
 	- login par le compte google
 	
