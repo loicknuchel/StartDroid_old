@@ -2,15 +2,13 @@ package com.knuchel.start.android;
 //TUTO : http://www.samcoles.co.uk/mobile/android-implementing-a-dashboard-activity/
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class DashboardActivity extends Activity {
-	private Button retBtn;
+//	private Button retBtn;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

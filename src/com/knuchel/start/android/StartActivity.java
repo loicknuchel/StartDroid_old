@@ -1,25 +1,22 @@
 package com.knuchel.start.android;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.knuchel.start.android.config.Config;
 import com.knuchel.start.android.model.SamplePrefs;
 import com.knuchel.start.android.utils.Network;
+import com.knuchel.start.android.utils.Popup;
 
 /*
  * TODO :
@@ -30,6 +27,7 @@ public class StartActivity extends Activity {
 	private Button test;
 	private Button goDashboard;
 	private Button goTabActivity;
+	private Button goServicesActivity;
 	private Button goSampleSettings;
 	private Button readSampleSettings;
 	private Button isNetworkAvailable;
@@ -38,7 +36,7 @@ public class StartActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.start);
-			displayFirstUseDialogBox();
+			Popup.displayIfFirstUse(getApplicationContext(), StartActivity.this);
 			setUp();
 			onCLickValidate();
     }
@@ -47,6 +45,7 @@ public class StartActivity extends Activity {
 		test = (Button) findViewById(R.id.test);
 		goDashboard = (Button) findViewById(R.id.goDashboard);
 		goTabActivity = (Button) findViewById(R.id.goTabActivity);
+		goServicesActivity = (Button) findViewById(R.id.goServicesActivity);
 		goSampleSettings = (Button) findViewById(R.id.goSampleSettings);
 		readSampleSettings = (Button) findViewById(R.id.readSampleSettings);
 		isNetworkAvailable = (Button) findViewById(R.id.isNetworkAvailable);
@@ -69,6 +68,13 @@ public class StartActivity extends Activity {
 		goTabActivity.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
             	Intent i = new Intent(getBaseContext(), TabHostActivity.class);
+    			startActivity(i);
+            }
+        });
+		
+		goServicesActivity.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	Intent i = new Intent(getBaseContext(), ServicesActivity.class);
     			startActivity(i);
             }
         });
@@ -141,46 +147,10 @@ public class StartActivity extends Activity {
 			Toast.makeText(getBaseContext(), "sousmenufaq", Toast.LENGTH_SHORT).show();
 			return true;
 		case R.id.sousmenuabout:
-			LayoutInflater factory = LayoutInflater.from(StartActivity.this);
-        	final View alertDialogView = factory.inflate(R.layout.alertdialogabout, null);
-        	
-        	AlertDialog.Builder adb = new AlertDialog.Builder(StartActivity.this);
-        	adb.setView(alertDialogView)
-        		.setTitle(getResources().getString(R.string.abouttitle))
-        		.setIcon(R.drawable.about)
-        		.setPositiveButton(getResources().getString(R.string.validate), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    	
-                    }
-        		})
-        		.show();
+			Popup.displayAbout(getApplicationContext(), StartActivity.this);
 			return true;
 		}
 		return false;
 	}
 	
-	private void displayFirstUseDialogBox() {
-		SharedPreferences prefs = getSharedPreferences(Config.PREFS, 0);
-		
-		if(prefs.getBoolean(Config.PREFS_SHOW_START_POPUP, true)){
-			LayoutInflater factory = LayoutInflater.from(StartActivity.this);
-	    	final View alertDialogView = factory.inflate(R.layout.alertdialogstart, null);
-	    	
-	    	AlertDialog.Builder adb = new AlertDialog.Builder(StartActivity.this);
-	    	adb.setView(alertDialogView)
-	    		.setTitle(getResources().getString(R.string.starttitle))
-	    		.setIcon(R.drawable.about)
-	    		.setPositiveButton(getResources().getString(R.string.validate), new DialogInterface.OnClickListener() {
-		            public void onClick(DialogInterface dialog, int which) {
-		            	CheckBox noDisplay = (CheckBox) alertDialogView.findViewById(R.id.startcontentshow);
-		    	    	if(noDisplay.isChecked()){
-		    		    	final SharedPreferences.Editor editor = getSharedPreferences(Config.PREFS, 0).edit();
-		    		    	editor.putBoolean(Config.PREFS_SHOW_START_POPUP, false);
-		    		    	editor.commit();
-		    	    	}
-		            }
-	    		})
-	    		.show();
-		}
-	}
 }

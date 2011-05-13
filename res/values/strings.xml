@@ -5,6 +5,7 @@
     <string name="testFeature">Launch test</string>
     <string name="goDashboard">Dashboard Activity</string>
     <string name="goTabActivity">Tab Activity</string>
+    <string name="goServicesActivity">Services Activity</string>
     <string name="samplesettings">Sample Settings</string>
     <string name="goSampleSettings">Sample Prefs</string>
     <string name="readSampleSettings">Read Sample Pref</string>
@@ -53,10 +54,16 @@
     <string name="retBtn">Retour</string>
     <string name="prefs">Préférences</string>
     <string name="validate">OK</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="noScanerFound">Pas de scanner trouvé !</string>
     
     
     <string name="activity_add">add</string>
     <string name="activity_viewall">view</string>
     <string name="activity_manage">manage</string>
     <string name="activity_personalbests">bests</string>
+    
+    
+    <string name="serviceScan">Scanner</string>
 </resources>

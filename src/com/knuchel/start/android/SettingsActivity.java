@@ -1,17 +1,14 @@
 package com.knuchel.start.android;
 
-import com.knuchel.start.android.config.Config;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.Toast;
+
+import com.knuchel.start.android.config.Config;
+import com.knuchel.start.android.utils.Popup;
 
 public class SettingsActivity extends PreferenceActivity {
 	@Override
@@ -31,20 +28,7 @@ public class SettingsActivity extends PreferenceActivity {
 		Preference AboutPref = (Preference) findPreference("AboutPref");
 		AboutPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
-				LayoutInflater factory = LayoutInflater.from(SettingsActivity.this);
-            	final View alertDialogView = factory.inflate(R.layout.alertdialogabout, null);
-            	
-            	AlertDialog.Builder adb = new AlertDialog.Builder(SettingsActivity.this);
-            	adb.setView(alertDialogView)
-            		.setTitle(getResources().getString(R.string.abouttitle))
-            		.setIcon(R.drawable.about)
-            		.setPositiveButton(getResources().getString(R.string.validate), new DialogInterface.OnClickListener() {
-	                    public void onClick(DialogInterface dialog, int which) {
-	                    	
-	                    }
-            		})
-            		.show();
-				
+				Popup.displayAbout(getApplicationContext(), SettingsActivity.this);
 				return true;
 			}
 		});

@@ -18,6 +18,7 @@
         <activity android:name=".TabHostActivity"></activity>
         <activity android:name=".TabFirstActivity"></activity>
         <activity android:name=".TabSecondActivity"></activity>
+        <activity android:name=".ServicesActivity"></activity>
         
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".SampleSettingsActivity"></activity>
