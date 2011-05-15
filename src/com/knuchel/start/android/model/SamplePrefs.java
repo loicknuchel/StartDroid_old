@@ -47,5 +47,5 @@ public class SamplePrefs {
 	public String getCustomPref() {
 		return customPref;
 	}
-	
+
 }

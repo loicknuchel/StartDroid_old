@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <com.knuchel.start.android.widget.ActionBar
+        android:id="@+id/actionbar"
+        style="@style/ActionBar"
+        />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_marginTop="20dip">
+	        <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal">
+		        <Button
+		            android:id="@+id/start_progress"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Start Progress" />
+		        <Button
+		            android:id="@+id/stop_progress"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Stop Progress" />
+	        </LinearLayout>
+	        <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal">
+		        <Button
+		            android:id="@+id/remove_all_actions"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Clear actionbar" />
+		        <Button
+		            android:id="@+id/restaure_all_actions"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Restaure actionbar" />
+	        </LinearLayout>
+	        <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal">
+		        <Button
+		            android:id="@+id/remove_share_action"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Delete share action" />
+		        <Button
+		            android:id="@+id/add_share_action"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Add share action" />
+	        </LinearLayout>
+	        <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal">
+		        <Button
+		            android:id="@+id/remove_other_action"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Delete other action" />
+	        </LinearLayout>
+	        <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal">
+		        <Button
+		            android:id="@+id/remove_last_action"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Delete last action" />
+		        <Button
+		            android:id="@+id/add_new_action"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Add new action" />
+	        </LinearLayout>
+<!-- 	        <Button -->
+<!-- 	            android:id="@+id/add_action" -->
+<!-- 	            android:layout_width="wrap_content" -->
+<!-- 	            android:layout_height="wrap_content" -->
+<!-- 	            android:text="Add action" /> -->
+<!-- 	        <Button -->
+<!-- 	            android:id="@+id/remove_action" -->
+<!-- 	            android:layout_width="wrap_content" -->
+<!-- 	            android:layout_height="wrap_content" -->
+<!-- 	            android:text="Remove action" /> -->
+	    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

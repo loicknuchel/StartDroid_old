@@ -6,9 +6,11 @@ import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
 
 public class Network {
-	// need : <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	// need : <uses-permission
+	// android:name="android.permission.ACCESS_NETWORK_STATE" />
 	public static final boolean isNetworkAvailable(Context context) {
-		ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connectivityManager = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 		if (networkInfo != null) {
 			// System.out.println(networkInfo.getTypeName()); // mobile ou WIFI

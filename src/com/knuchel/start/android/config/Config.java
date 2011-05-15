@@ -18,6 +18,6 @@ public class Config {
 	public static final String SAMPLE_PREFS_DEFAULTVALUE_SECONDEDITTEXT = "Nothing has been entered";
 	public static final String SAMPLE_PREFS_NAME_CUSTOM = "myCusomPref";
 	public static final String SAMPLE_PREFS_DEFAULTVALUE_CUSTOM = "Default for custom";
-	
+
 	public static final Integer SCANNER_CODE = 0;
 }

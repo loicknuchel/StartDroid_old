@@ -18,10 +18,12 @@
         <activity android:name=".TabHostActivity"></activity>
         <activity android:name=".TabFirstActivity"></activity>
         <activity android:name=".TabSecondActivity"></activity>
+        <activity android:name=".ActionBarHomeActivity"></activity>
+        <activity android:name=".ActionBarOtherActivity"></activity>
         <activity android:name=".ServicesActivity"></activity>
         
         <activity android:name=".SettingsActivity"></activity>
-        <activity android:name=".SampleSettingsActivity"></activity>
+        <activity android:name="SampleSettingsActivity"></activity>
     </application>
     
     <!-- Tester si la connexion au reseau est possible -->

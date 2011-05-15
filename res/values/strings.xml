@@ -3,9 +3,10 @@
     <string name="app_name">StartDroid</string>
     
     <string name="testFeature">Launch test</string>
-    <string name="goDashboard">Dashboard Activity</string>
-    <string name="goTabActivity">Tab Activity</string>
-    <string name="goServicesActivity">Services Activity</string>
+    <string name="goDashboard">Dashboard\nActivity</string>
+    <string name="goActionBar">ActionBar\nActivity</string>
+    <string name="goTabActivity">Tab\nActivity</string>
+    <string name="goServicesActivity">Services\nActivity</string>
     <string name="samplesettings">Sample Settings</string>
     <string name="goSampleSettings">Sample Prefs</string>
     <string name="readSampleSettings">Read Sample Pref</string>
@@ -66,4 +67,6 @@
     
     
     <string name="serviceScan">Scanner</string>
+    <string name="some_title">some title</string>
+    <string name="actionbar_activity_not_found">Failed to open intent...</string>
 </resources>

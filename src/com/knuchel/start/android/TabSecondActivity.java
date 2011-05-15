@@ -6,15 +6,16 @@ import android.widget.TextView;
 
 public class TabSecondActivity extends Activity {
 	/** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tabsecond);
-        
-    	// On récupère notre intent et la valeur que l'on affiche dans le TextView
-    	String valeur = getIntent().getStringExtra("valeur");
-    	
-    	TextView textView = (TextView) findViewById(R.id.monTextView2);
-    	textView.setText(valeur);
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.tabsecond);
+
+		// On récupère notre intent et la valeur que l'on affiche dans le
+		// TextView
+		String valeur = getIntent().getStringExtra("valeur");
+
+		TextView textView = (TextView) findViewById(R.id.monTextView2);
+		textView.setText(valeur);
+	}
 }

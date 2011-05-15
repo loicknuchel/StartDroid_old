@@ -11,7 +11,7 @@
 <!-- 	    android:layout_height="wrap_content" -->
 <!-- 	    /> -->
  
-    <com.knuchel.start.android.layout.DashboardLayout
+    <com.knuchel.start.android.widget.Dashboard
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -37,6 +37,6 @@
             android:text="@string/activity_personalbests"
             android:drawableTop="@drawable/dashboard_button_add" />    
  
-    </com.knuchel.start.android.layout.DashboardLayout>
+    </com.knuchel.start.android.widget.Dashboard>
  
 </LinearLayout>

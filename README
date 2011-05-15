@@ -16,20 +16,25 @@ Il intègre un certain nombre d'éléments très souvents utilisés lors des pro
 	- la vérification de la présence du réseau
 	- popup about
 	- dashboard
+	- action bar
 	- tab activity
+	- exemples de services (scanner)
 
 Démarrer un projet avec StartDroid vous permettra d'une part d'avoir une base pour de nombreuses 
 fonctionnalités et d'autre part d'en découvrir de nouvelles déjà implémentées dans votre projet.
 
 Pour toute remarque, suggestion ou bug vous pouvez me contacter par mail : loicknuchel@gmail.com
 ou sur twitter : @loicknuchel
+Je suis ouvert à toute proposition d'ajout de fonctionnalité ou de proposition de structuration du projet.
+Si vous avez des remarques pour faire avancer le projet, surtout n'hésitez pas.
+
 
 Liste des fonctionnalités à venir :
-	- action bar
 	- quick action bar
 	- sqlite
+	- proposer de noter l'appli au bout de qqes utilisations
 	- broadcast receiver
-	- exemples de services (scanner, photo, contacts...)
+	- exemples de services (photo, contacts...)
 	- service rest
 	- async task
 	- thème personnalisé
@@ -38,6 +43,8 @@ Liste des fonctionnalités à venir :
 	- analytics
 	- gestion du changement d'orientation du téléphone (portrait/paysage)
 	- login par le compte google
+	- insérer du code C ou C++ dans une appli
+	- gérer une google map
 	
 A noter : 
 	le code est volontairement peu commenté. 
