@@ -3,6 +3,7 @@ package com.knuchel.start.android;
 //TUTO : http://www.ace-art.fr/wordpress/2010/10/13/tutoriel-android-partie-11-les-tabhost/
 
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,10 @@ import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
+import com.knuchel.start.android.utils.Strings;
+
 public class TabHostActivity extends TabActivity {
+	private Context c;
 	private Button retBtn;
 
 	/** Called when the activity is first created. */
@@ -19,6 +23,7 @@ public class TabHostActivity extends TabActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tabhost);
+		c = getApplicationContext();
 		setUp();
 		onCLickValidate();
 		createAllTabs();
@@ -46,15 +51,15 @@ public class TabHostActivity extends TabActivity {
 
 		// creation d'un premier onglet
 		Intent intent = new Intent(this, TabFirstActivity.class);
-		intent.putExtra("valeur", "TabFirstActivity : Coucou tout le monde");
-		tabSpec = tabHost.newTabSpec("tabcoucou").setIndicator("tab un")
+		intent.putExtra("valeur", Strings.get(c, R.string.THA_first_value));
+		tabSpec = tabHost.newTabSpec("tabcoucou")
+				.setIndicator(Strings.get(c, R.string.THA_first_tab))
 				.setContent(intent);
 		tabHost.addTab(tabSpec);
 
 		// creation d'un second onglet
 		Intent intent2 = new Intent(this, TabFirstActivity.class);
-		intent2.putExtra("valeur",
-				"TabFirstActivity : C'est la meme activite avec un autre parametre");
+		intent2.putExtra("valeur", Strings.get(c, R.string.THA_second_value));
 		tabSpec = tabHost.newTabSpec("tabsecond")
 				.setIndicator("", getResources().getDrawable(R.drawable.icon))
 				.setContent(intent2);
@@ -62,10 +67,10 @@ public class TabHostActivity extends TabActivity {
 
 		// creation d'un second onglet
 		Intent intent3 = new Intent(this, TabSecondActivity.class);
-		intent3.putExtra("valeur", "TabSecondActivity : Autre activite...");
+		intent3.putExtra("valeur", Strings.get(c, R.string.THA_third_value));
 		tabSpec = tabHost
 				.newTabSpec("othertab")
-				.setIndicator("trois",
+				.setIndicator(Strings.get(c, R.string.THA_third_tab),
 						getResources().getDrawable(R.drawable.settings))
 				.setContent(intent3);
 		tabHost.addTab(tabSpec);

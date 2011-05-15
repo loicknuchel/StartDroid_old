@@ -20,11 +20,9 @@ public class ExtraService {
 		} catch (Exception e) {
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-			builder.setMessage(
-					context.getResources().getString(R.string.noScanerFound))
+			builder.setMessage(Strings.get(context, R.string.noScanerFound))
 					.setCancelable(false)
-					.setPositiveButton(
-							context.getResources().getString(R.string.yes),
+					.setPositiveButton(Strings.get(context, R.string.yes),
 							new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog,
@@ -38,8 +36,7 @@ public class ExtraService {
 									dialog.cancel();
 								}
 							})
-					.setNegativeButton(
-							context.getResources().getString(R.string.no),
+					.setNegativeButton(Strings.get(context, R.string.no),
 							new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog,

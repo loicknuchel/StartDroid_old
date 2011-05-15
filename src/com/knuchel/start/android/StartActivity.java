@@ -1,12 +1,12 @@
 package com.knuchel.start.android;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,8 +15,10 @@ import android.widget.Toast;
 
 import com.knuchel.start.android.config.Config;
 import com.knuchel.start.android.model.SamplePrefs;
+import com.knuchel.start.android.utils.Menus;
 import com.knuchel.start.android.utils.Network;
 import com.knuchel.start.android.utils.Popup;
+import com.knuchel.start.android.utils.Strings;
 
 /*
  * TODO :
@@ -24,6 +26,7 @@ import com.knuchel.start.android.utils.Popup;
  */
 
 public class StartActivity extends Activity {
+	private Context c;
 	private Button test;
 	private Button goDashboard;
 	private Button goActionBar;
@@ -37,7 +40,10 @@ public class StartActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start);
+		c = getApplicationContext();
 		Popup.displayIfFirstUse(getApplicationContext(), StartActivity.this);
+		Popup.displayRatingApp(getApplicationContext(), StartActivity.this, 6,
+				false);
 		setUp();
 		onCLickValidate();
 	}
@@ -56,8 +62,9 @@ public class StartActivity extends Activity {
 	private void onCLickValidate() {
 		test.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(getBaseContext(), "Test !!!", Toast.LENGTH_SHORT)
-						.show();
+				Toast.makeText(getBaseContext(),
+						Strings.get(c, R.string.SAstart_testFeaturetexte),
+						Toast.LENGTH_SHORT).show();
 			}
 		});
 
@@ -125,7 +132,8 @@ public class StartActivity extends Activity {
 			public void onClick(View v) {
 				Toast.makeText(
 						getBaseContext(),
-						"network available : "
+						Strings.get(c, R.string.SAstart_NetworkAvailable)
+								+ " : "
 								+ Network.isNetworkAvailable(getBaseContext()),
 						Toast.LENGTH_LONG).show();
 			}
@@ -164,32 +172,12 @@ public class StartActivity extends Activity {
 
 	// gestion du menu
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
-		menu.getItem(1).getSubMenu().setHeaderIcon(R.drawable.help);
-		return true;
+		return Menus.classicCreate(StartActivity.this, menu);
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent i;
-		switch (item.getItemId()) {
-		case R.id.menusettings:
-			i = new Intent(getBaseContext(), SettingsActivity.class);
-			startActivity(i);
-			return true;
-		case R.id.menuhelp:
-			Toast.makeText(getBaseContext(), "menuhelp", Toast.LENGTH_SHORT)
-					.show();
-			return true;
-		case R.id.sousmenufaq:
-			Toast.makeText(getBaseContext(), "sousmenufaq", Toast.LENGTH_SHORT)
-					.show();
-			return true;
-		case R.id.sousmenuabout:
-			Popup.displayAbout(getApplicationContext(), StartActivity.this);
-			return true;
-		}
-		return false;
+		return Menus.classicSelect(getApplicationContext(), StartActivity.this,
+				item);
 	}
 
 }

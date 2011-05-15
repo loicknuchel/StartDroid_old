@@ -1,5 +1,6 @@
 package com.knuchel.start.android;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -8,19 +9,25 @@ import android.preference.PreferenceActivity;
 import android.widget.Toast;
 
 import com.knuchel.start.android.config.Config;
+import com.knuchel.start.android.utils.ExtraIntent;
 import com.knuchel.start.android.utils.Popup;
+import com.knuchel.start.android.utils.Strings;
 
 public class SettingsActivity extends PreferenceActivity {
+	private Context c;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
+		c = getApplicationContext();
 
 		// Gestion des preferences custom
 		Preference FAQPref = (Preference) findPreference("FAQPref");
 		FAQPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getBaseContext(), "FAQPref clicked",
+				Toast.makeText(getBaseContext(),
+						Strings.get(c, R.string.SApref_faqclicked),
 						Toast.LENGTH_SHORT).show();
 				return true;
 			}
@@ -39,9 +46,8 @@ public class SettingsActivity extends PreferenceActivity {
 		FeedbackPref
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 					public boolean onPreferenceClick(Preference preference) {
-						Toast.makeText(getBaseContext(),
-								"FeedbackPref clicked", Toast.LENGTH_SHORT)
-								.show();
+						Popup.displayRatingApp(getApplicationContext(),
+								SettingsActivity.this, -1, true);
 						return true;
 					}
 				});
@@ -49,8 +55,8 @@ public class SettingsActivity extends PreferenceActivity {
 		Preference SharePref = (Preference) findPreference("SharePref");
 		SharePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getBaseContext(), "SharePref clicked",
-						Toast.LENGTH_SHORT).show();
+				startActivity(ExtraIntent.shareIntent(Strings.get(c,
+						R.string.SApref_shareapptext)));
 				return true;
 			}
 		});
@@ -59,7 +65,8 @@ public class SettingsActivity extends PreferenceActivity {
 		FriendPref
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 					public boolean onPreferenceClick(Preference preference) {
-						Toast.makeText(getBaseContext(), "FriendPref clicked",
+						Toast.makeText(getBaseContext(),
+								Strings.get(c, R.string.SApref_friendclicked),
 								Toast.LENGTH_SHORT).show();
 						return true;
 					}
@@ -71,9 +78,11 @@ public class SettingsActivity extends PreferenceActivity {
 				final SharedPreferences.Editor editor = getSharedPreferences(
 						Config.PREFS, 0).edit();
 				editor.putBoolean(Config.PREFS_SHOW_START_POPUP, true);
+				editor.putInt(Config.PREFS_START_COUNT, 0);
+				editor.putBoolean(Config.PREFS_START_COUNT_SHOW, true);
 				editor.commit();
 				Toast.makeText(getBaseContext(),
-						getResources().getString(R.string.initappdone),
+						Strings.get(c, R.string.SApref_initdone),
 						Toast.LENGTH_LONG).show();
 				return true;
 			}
@@ -82,7 +91,8 @@ public class SettingsActivity extends PreferenceActivity {
 		Preference ClosePref = (Preference) findPreference("ClosePref");
 		ClosePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getBaseContext(), "ClosePref clicked",
+				Toast.makeText(getBaseContext(),
+						Strings.get(c, R.string.SApref_closeclicked),
 						Toast.LENGTH_SHORT).show();
 				// SharedPreferences customSharedPreference =
 				// getSharedPreferences("myCustomSharedPrefs",

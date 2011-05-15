@@ -26,12 +26,12 @@
 		            android:id="@+id/start_progress"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Start Progress" />
+		            android:text="@string/ABHA_btn_start" />
 		        <Button
 		            android:id="@+id/stop_progress"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Stop Progress" />
+		            android:text="@string/ABHA_btn_stop" />
 	        </LinearLayout>
 	        <LinearLayout
 		        android:layout_width="fill_parent"
@@ -41,12 +41,12 @@
 		            android:id="@+id/remove_all_actions"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Clear actionbar" />
+		            android:text="@string/ABHA_btn_clear" />
 		        <Button
 		            android:id="@+id/restaure_all_actions"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Restaure actionbar" />
+		            android:text="@string/ABHA_btn_restaure" />
 	        </LinearLayout>
 	        <LinearLayout
 		        android:layout_width="fill_parent"
@@ -56,12 +56,12 @@
 		            android:id="@+id/remove_share_action"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Delete share action" />
+		            android:text="@string/ABHA_btn_delShare" />
 		        <Button
 		            android:id="@+id/add_share_action"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Add share action" />
+		            android:text="@string/ABHA_btn_addShare" />
 	        </LinearLayout>
 	        <LinearLayout
 		        android:layout_width="fill_parent"
@@ -71,7 +71,7 @@
 		            android:id="@+id/remove_other_action"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Delete other action" />
+		            android:text="@string/ABHA_btn_delAction" />
 	        </LinearLayout>
 	        <LinearLayout
 		        android:layout_width="fill_parent"
@@ -81,23 +81,13 @@
 		            android:id="@+id/remove_last_action"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Delete last action" />
+		            android:text="@string/ABHA_btn_delLast" />
 		        <Button
 		            android:id="@+id/add_new_action"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:text="Add new action" />
+		            android:text="@string/ABHA_btn_addAction" />
 	        </LinearLayout>
-<!-- 	        <Button -->
-<!-- 	            android:id="@+id/add_action" -->
-<!-- 	            android:layout_width="wrap_content" -->
-<!-- 	            android:layout_height="wrap_content" -->
-<!-- 	            android:text="Add action" /> -->
-<!-- 	        <Button -->
-<!-- 	            android:id="@+id/remove_action" -->
-<!-- 	            android:layout_width="wrap_content" -->
-<!-- 	            android:layout_height="wrap_content" -->
-<!-- 	            android:text="Remove action" /> -->
 	    </LinearLayout>
     </ScrollView>
 </LinearLayout>

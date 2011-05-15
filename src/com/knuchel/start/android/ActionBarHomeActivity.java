@@ -1,8 +1,5 @@
 package com.knuchel.start.android;
 
-import com.knuchel.start.android.widget.ActionBar;
-import com.knuchel.start.android.widget.ActionBar.Action;
-import com.knuchel.start.android.widget.ActionBar.IntentAction;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -12,9 +9,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.knuchel.start.android.utils.ExtraIntent;
+import com.knuchel.start.android.utils.Strings;
+import com.knuchel.start.android.widget.ActionBar;
+import com.knuchel.start.android.widget.ActionBar.Action;
+import com.knuchel.start.android.widget.ActionBar.IntentAction;
+
 public class ActionBarHomeActivity extends Activity {
+	private Context c;
 	private ActionBar actionBar;
-	private Action homeAction;
+	// private Action homeAction;
 	private Action shareAction;
 	private Action otherAction;
 
@@ -32,6 +36,7 @@ public class ActionBarHomeActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.actionbarhome);
+		c = getApplicationContext();
 		setUp();
 		setContents();
 		onCLickValidate();
@@ -39,11 +44,10 @@ public class ActionBarHomeActivity extends Activity {
 
 	protected void setUp() {
 		actionBar = (ActionBar) findViewById(R.id.actionbar);
-		homeAction = new IntentAction(this, createHomeIntent(this),
-				R.drawable.ic_title_home_default);
+		// homeAction = new IntentAction(this, createHomeIntent(this),
+		// R.drawable.ic_title_home_default);
 		shareAction = new IntentAction(this,
-				createShareIntent("Shared from the ActionBar widget."),
-				R.drawable.ic_title_share_default);
+				ExtraIntent.shareIntent(Strings.get(c, R.string.ABHA_share)), R.drawable.ic_title_share_default);
 		otherAction = new IntentAction(this, new Intent(this,
 				ActionBarOtherActivity.class),
 				R.drawable.ic_title_export_default);
@@ -61,8 +65,8 @@ public class ActionBarHomeActivity extends Activity {
 
 	protected void setContents() {
 		// action bar content
-		actionBar.setTitle("Home");
-		//actionBar.setHomeAction(homeAction); // icone sur la gauche : facultatif
+		actionBar.setTitle(Strings.get(c, R.string.ABHA_title));
+		// actionBar.setHomeAction(homeAction); // facultatif !
 		actionBar.addAction(shareAction);
 		actionBar.addAction(otherAction);
 	}
@@ -124,7 +128,8 @@ public class ActionBarHomeActivity extends Activity {
 			public void onClick(View view) {
 				int actionCount = actionBar.getActionCount();
 				actionBar.removeActionAt(actionCount - 1);
-				Toast.makeText(ActionBarHomeActivity.this, "Removed action.",
+				Toast.makeText(ActionBarHomeActivity.this,
+						Strings.get(c, R.string.ABHA_remove),
 						Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -136,7 +141,8 @@ public class ActionBarHomeActivity extends Activity {
 					@Override
 					public void performAction(View view) {
 						Toast.makeText(ActionBarHomeActivity.this,
-								"Added action.", Toast.LENGTH_SHORT).show();
+								Strings.get(c, R.string.ABHA_add),
+								Toast.LENGTH_SHORT).show();
 					}
 
 					@Override
@@ -146,18 +152,5 @@ public class ActionBarHomeActivity extends Activity {
 				});
 			}
 		});
-	}
-
-	public static Intent createHomeIntent(Context context) {
-		Intent i = new Intent(context, ActionBarHomeActivity.class);
-		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		return i;
-	}
-
-	private Intent createShareIntent(String content) {
-		final Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("text/plain");
-		intent.putExtra(Intent.EXTRA_TEXT, content);
-		return Intent.createChooser(intent, "Share");
 	}
 }

@@ -4,12 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<!-- 	<Button -->
-<!-- 	    android:id="@+id/dashboardRetBtn" -->
-<!-- 	    android:text="@string/retBtn" -->
-<!-- 	    android:layout_width="fill_parent"  -->
-<!-- 	    android:layout_height="wrap_content" -->
-<!-- 	    /> -->
  
     <com.knuchel.start.android.widget.Dashboard
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,22 +13,22 @@
  
         <Button android:id="@+id/dashboard_button_add"
             style="@style/DashboardButton"
-            android:text="@string/activity_add"
+            android:text="@string/DBA_add"
             android:drawableTop="@drawable/dashboard_button_add" />
  
         <Button android:id="@+id/dashboard_button_viewall"
             style="@style/DashboardButton"
-            android:text="@string/activity_viewall"
+            android:text="@string/DBA_viewall"
             android:drawableTop="@drawable/dashboard_button_add" />
  
         <Button android:id="@+id/dashboard_button_manage"
             style="@style/DashboardButton"
-            android:text="@string/activity_manage"
+            android:text="@string/DBA_manage"
             android:drawableTop="@drawable/dashboard_button_add" />
  
         <Button android:id="@+id/dashboard_button_personalbests"
             style="@style/DashboardButton"
-            android:text="@string/activity_personalbests"
+            android:text="@string/DBA_personalbests"
             android:drawableTop="@drawable/dashboard_button_add" />    
  
     </com.knuchel.start.android.widget.Dashboard>

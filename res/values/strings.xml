@@ -1,35 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<!-- General textes -->
     <string name="app_name">StartDroid</string>
-    
-    <string name="testFeature">Launch test</string>
-    <string name="goDashboard">Dashboard\nActivity</string>
-    <string name="goActionBar">ActionBar\nActivity</string>
-    <string name="goTabActivity">Tab\nActivity</string>
-    <string name="goServicesActivity">Services\nActivity</string>
-    <string name="samplesettings">Sample Settings</string>
-    <string name="goSampleSettings">Sample Prefs</string>
-    <string name="readSampleSettings">Read Sample Pref</string>
-    <string name="isNetworkAvailable">Network available</string>
-    
-    <string name="helppreftitle">Aide</string>
-    <string name="faqpref">FAQ</string>
-    <string name="aboutpref">A propos</string>
-    <string name="severalpreftitle">Divers</string>
-    <string name="feedbackpref">Donnez votre avis</string>
-    <string name="sharepref">Partager l\'application</string>
-    <string name="friendpref">Applications amies</string>
-    <string name="initpref">Réinitialiser l\'application</string>
-    <string name="closepreftitle">Quitter</string>
-    <string name="closepref">Quitter l\'application</string>
-    <string name="initappdone">Application réinitialisée</string>
-    
-    <string name="menusettings">Préférences</string>
-    <string name="menuhelp">Aide</string>
-    <string name="sousmenufaq">FAQ</string>
-    <string name="sousmenuabout">A propos</string>
+    <string name="retBtn">Retour</string>
+    <string name="prefs">Préférences</string>
+    <string name="validate">OK</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
 
-    <string name="starttitle">Attention</string>
+<!-- StartActivity textes -->
+    <string name="SAstart_testFeature">Launch test</string>
+    <string name="SAstart_testFeaturetexte">TEST !!!</string>
+    <string name="SAstart_goDashboard">Dashboard\nActivity</string>
+    <string name="SAstart_goActionBar">ActionBar\nActivity</string>
+    <string name="SAstart_goTabActivity">Tab\nActivity</string>
+    <string name="SAstart_goServicesActivity">Services\nActivity</string>
+    <string name="SAstart_goSampleSettings">Sample Prefs</string>
+    <string name="SAstart_readSampleSettings">Read Sample Pref</string>
+    <string name="SAstart_isNetworkAvailable">Network available</string>
+    <string name="SAstart_NetworkAvailable">network available</string>
+    <string name="SAstart_MenuHelp">menuhelp</string>
+    <string name="SAstart_MenuFAQ">sousmenufaq</string>
+    
+<!-- ActionBarHomeActivity textes -->
+	<string name="ABHA_title">Home</string>
+	<string name="ABHA_share">Shared from the ActionBar widget.</string>
+	<string name="ABHA_add">Added action.</string>
+	<string name="ABHA_remove">Removed action.</string>
+	<string name="ABHA_btn_start">Start Progress</string>
+	<string name="ABHA_btn_stop">Stop Progress</string>
+	<string name="ABHA_btn_clear">Clear actionbar</string>
+	<string name="ABHA_btn_restaure">Restaure actionbar</string>
+	<string name="ABHA_btn_delShare">Delete share action</string>
+	<string name="ABHA_btn_addShare">Add share action</string>
+	<string name="ABHA_btn_delAction">Delete other action</string>
+	<string name="ABHA_btn_delLast">Delete last action</string>
+	<string name="ABHA_btn_addAction">Add new action</string>
+
+<!-- ActionBarOtherActivity textes -->
+	<string name="ABOA_share">Shared from the ActionBar widget.</string>
+	<string name="ABOA_exemple">Example action</string>
+    <string name="ABOA_title">some title</string>
+    <string name="ABOA_texte">Home home</string>
+
+<!-- DashboardActivity textes -->
+    <string name="DBA_add">add</string>
+    <string name="DBA_viewall">view</string>
+    <string name="DBA_manage">manage</string>
+    <string name="DBA_personalbests">bests</string>
+    
+<!-- ServicesActivity textes -->
+    <string name="SA_serviceScan">Scanner</string>
+    <string name="SA_result">Scanner result</string>
+    <string name="SA_format">format</string>
+    <string name="SA_content">contenu</string>
+    <string name="SA_cancelled">Scan annulé</string>
+   
+<!-- TabHostActivity textes -->
+    <string name="THA_first_tab">tab un</string>
+    <string name="THA_first_value">TabFirstActivity : Coucou tout le monde</string>
+    <string name="THA_second_value">TabFirstActivity : C\'est la meme activite avec un autre parametre</string>
+    <string name="THA_third_tab">trois</string>
+    <string name="THA_third_value">TabSecondActivity : Autre activite...</string>
+
+
+<!-- SettingsActivity textes -->
+    <string name="SApref_helptitle">Aide</string>
+    <string name="SApref_faq">FAQ (todo)</string>
+    <string name="SApref_faqclicked">FAQPref clicked</string>
+    <string name="SApref_about">A propos</string>
+    <string name="SApref_severaltitle">Divers</string>
+    <string name="SApref_feedback">Donnez votre avis</string>
+    <string name="SApref_share">Partager l\'application</string>
+    <string name="SApref_shareapptext">Texte a partager...</string>
+    <string name="SApref_friend">Applications amies (todo)</string>
+    <string name="SApref_friendclicked">)FriendPref clicked</string>
+    <string name="SApref_init">Réinitialiser l\'application</string>
+    <string name="SApref_initdone">Application réinitialisée</string>
+    <string name="SApref_closetitle">Quitter</string>
+    <string name="SApref_close">Quitter l\'application (todo)</string>
+    <string name="SApref_closeclicked">ClosePref clicked</string>
+
+<!-- SampleSettingsActivity textes -->
+    <string name="SSA_custom_btn_clicked">The custom preference has been clicked</string>
+    <string name="SSA_btn_clicked">The preference has been clicked</string>
+    <string name="SSA_category_1">First Category</string>
+    <string name="SSA_checkbox_title">Checkbox Preference</string>
+    <string name="SSA_checkbox_summary">This preference can be true or false</string>
+    <string name="SSA_list_title">List Preference</string>
+    <string name="SSA_list_summary">This preference allows to select an item in a array</string>
+    <string name="SSA_category_2">Second Category</string>
+    <string name="SSA_edittext_title">Edit This Text</string>
+    <string name="SSA_edittext_summary">This allows you to enter a string</string>
+    <string name="SSA_edittext_default">Nothing</string>
+    <string name="SSA_ringtone_title">Ringtones</string>
+    <string name="SSA_ringtone_summary">Select a ringtone</string>
+    <string name="SSA_screen2_title">Second PreferenceScreen</string>
+    <string name="SSA_screen2_summary">This is a second PreferenceScreen</string>
+    <string name="SSA_edittext2_title">Edit text</string>
+    <string name="SSA_edittext2_summary">This is a preference in the second PreferenceScreen</string>
+    <string name="SSA_custom_title">Custom Preference</string>
+    <string name="SSA_custom_summary">This works almost like a button</string>
+
+<!-- Popup textes -->
+	<string name="starttitle">Attention</string>
     <string name="startcontent">
     	Cette popup ne s\'ouvre que lors du premier lancement.
     	Vous pouvez la revoir si vous réinitialisez l\'application dans les préférences.
@@ -51,22 +125,23 @@
     	\n
     	\nEncore un peu de texte pour la forme et le volume...
     </string>
+    <string name="ratingtitle">Noter cette application</string>
+    <string name="ratingcontent">
+    	Si cette application vous plait, vous pouvez la noter.
+    	\nVoulez vous noter l\'application ?
+    </string>
+    <string name="nomoreprint">Ne plus afficher</string>
     
-    <string name="retBtn">Retour</string>
-    <string name="prefs">Préférences</string>
-    <string name="validate">OK</string>
-    <string name="yes">Oui</string>
-    <string name="no">Non</string>
+<!-- ExtraService textes -->
     <string name="noScanerFound">Pas de scanner trouvé !</string>
     
-    
-    <string name="activity_add">add</string>
-    <string name="activity_viewall">view</string>
-    <string name="activity_manage">manage</string>
-    <string name="activity_personalbests">bests</string>
-    
-    
-    <string name="serviceScan">Scanner</string>
-    <string name="some_title">some title</string>
+<!-- Menus textes -->
+    <string name="menusettings">Préférences</string>
+    <string name="menuhelp">Aide</string>
+    <string name="sousmenufaq">FAQ</string>
+    <string name="sousmenuabout">A propos</string>
+
+<!-- ActionBar textes -->
     <string name="actionbar_activity_not_found">Failed to open intent...</string>
+    
 </resources>

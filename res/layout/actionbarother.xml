@@ -8,13 +8,13 @@
     
     <com.knuchel.start.android.widget.ActionBar
 	    android:id="@+id/actionbar"
-	    app:title="@string/some_title"
+	    app:title="@string/ABOA_title"
 	    style="@style/ActionBar"
         />
         
 	<TextView
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
-	    android:text="Home home"
+	    android:text="@string/ABOA_texte"
 	    />
 </LinearLayout>

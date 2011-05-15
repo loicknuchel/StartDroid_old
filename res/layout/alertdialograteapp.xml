@@ -8,8 +8,8 @@
  		android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
 		<TextView
-			android:id="@+id/startcontent"
-			android:text="@string/startcontent"
+			android:id="@+id/ratingcontent"
+			android:text="@string/ratingcontent"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:paddingLeft="15dip"
@@ -17,7 +17,7 @@
  	</ScrollView>
  	
  	<CheckBox
-		android:id="@+id/startcontentshow"
+		android:id="@+id/ratingcontentshow"
  		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:text="@string/nomoreprint"></CheckBox>

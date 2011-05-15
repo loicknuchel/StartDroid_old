@@ -1,8 +1,12 @@
 package com.knuchel.start.android.config;
 
 public class Config {
+	public static final String APP_PACKAGE = "com.google.zxing.client.android";
+
 	public static final String PREFS = "StartDroidPrefs";
 	public static final String PREFS_SHOW_START_POPUP = "StartPopup";
+	public static final String PREFS_START_COUNT = "StartCount";
+	public static final String PREFS_START_COUNT_SHOW = "StartCountShow";
 
 	public static final String SAMPLE_PREFS = "customPref";
 	public static final String SAMPLE_PREFS2 = "myCustomSharedPrefs";

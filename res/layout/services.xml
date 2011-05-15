@@ -7,7 +7,7 @@
     
 	<Button
 	    android:id="@+id/serviceScan"
-	    android:text="@string/serviceScan"
+	    android:text="@string/SA_serviceScan"
 	    android:layout_width="wrap_content" 
 	    android:layout_height="wrap_content"
 	    />

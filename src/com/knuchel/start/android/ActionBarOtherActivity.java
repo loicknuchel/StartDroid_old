@@ -1,16 +1,20 @@
 package com.knuchel.start.android;
 
-import com.knuchel.start.android.widget.ActionBar;
-import com.knuchel.start.android.widget.ActionBar.AbstractAction;
-import com.knuchel.start.android.widget.ActionBar.Action;
-import com.knuchel.start.android.widget.ActionBar.IntentAction;
 import android.app.Activity;
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.knuchel.start.android.utils.ExtraIntent;
+import com.knuchel.start.android.utils.Strings;
+import com.knuchel.start.android.widget.ActionBar;
+import com.knuchel.start.android.widget.ActionBar.AbstractAction;
+import com.knuchel.start.android.widget.ActionBar.Action;
+import com.knuchel.start.android.widget.ActionBar.IntentAction;
+
 public class ActionBarOtherActivity extends Activity {
+	private Context c;
 	private ActionBar actionBar;
 	private Action homeAction;
 	private Action shareAction;
@@ -20,6 +24,7 @@ public class ActionBarOtherActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.actionbarother);
+		c = getApplicationContext();
 		setUp();
 		setContents();
 		onCLickValidate();
@@ -28,12 +33,10 @@ public class ActionBarOtherActivity extends Activity {
 
 	protected void setUp() {
 		actionBar = (ActionBar) findViewById(R.id.actionbar);
-		homeAction = new IntentAction(this,
-				ActionBarHomeActivity.createHomeIntent(this),
+		homeAction = new IntentAction(this, ExtraIntent.homeIntent(this),
 				R.drawable.ic_title_home_default);
 		shareAction = new IntentAction(this,
-				createShareIntent("Shared from the ActionBar widget."),
-				R.drawable.ic_title_share_default);
+				ExtraIntent.shareIntent(Strings.get(c, R.string.ABOA_share)), R.drawable.ic_title_share_default);
 		otherAction = new ExampleAction();
 	}
 
@@ -50,13 +53,6 @@ public class ActionBarOtherActivity extends Activity {
 	private void onCLickValidate() {
 	}
 
-	private Intent createShareIntent(String content) {
-		final Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("text/plain");
-		intent.putExtra(Intent.EXTRA_TEXT, content);
-		return Intent.createChooser(intent, "Share");
-	}
-
 	private class ExampleAction extends AbstractAction {
 
 		public ExampleAction() {
@@ -65,7 +61,7 @@ public class ActionBarOtherActivity extends Activity {
 
 		@Override
 		public void performAction(View view) {
-			Toast.makeText(ActionBarOtherActivity.this, "Example action",
+			Toast.makeText(ActionBarOtherActivity.this, Strings.get(c, R.string.ABOA_exemple),
 					Toast.LENGTH_SHORT).show();
 		}
 
