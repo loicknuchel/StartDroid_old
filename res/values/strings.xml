@@ -103,32 +103,34 @@
     <string name="SSA_custom_summary">This works almost like a button</string>
 
 <!-- Popup textes -->
-	<string name="starttitle">Attention</string>
+	<string name="starttitle">Bienvenue</string>
     <string name="startcontent">
-    	Cette popup ne s\'ouvre que lors du premier lancement.
-    	Vous pouvez la revoir si vous réinitialisez l\'application dans les préférences.
+    	Cette popup ne s\'ouvre que lors des premiers lancements.
+    	\nBienvenue dans cette application starter. Pour plus d\'informations consultez le about.
+    	\n
+    	\nVous pouvez revoir cette popup si vous réinitialisez l\'application dans les préférences.
     </string>
     <string name="abouttitle">A propos</string>
     <string name="aboutcontent">
-    	Ceci est la section about de l\'application
+    	L\'application StartDroid contient un projet déjà configuré avec des services souvent utilisés dans les applications.
     	\n
-    	\nVous pouvez mettre ici tout ce que vous voulez, qui vous êtes, ce que vous faisez, 
-    	les buts de l\'application, le contenu des différentes mises a jour et beaucoup d\'autres choses.
+    	\nVoici les étapes nécessaires avant de commencer un projet avec cette application :
+    	\n - renommer les packages
+    	\n - rechercher dans les layout le package com.knuchel.start.android.widget et le renommer avec votre nouveau package.
     	\n
+    	\nPour toute remarque, suggestion ou rapport de bug vous pouvez me contacter par mail à l\'adresse <b>loicknuchel@gmail.com</b> ou par twitter <b>@loicknuchel</b>
     	\n
-    	\n<b>Cette section est là pour vous :)</b>
-    	\nLà je remplis cette section pour voir ce que fais cette dialog box si le texte dépasse.
+    	\nSi vous avez des suggestions sur la manière de coder ou l\'architecture du projet, je suis très intéressé par avoir des échanges à ce propos afin de rendre mon starter le plus pratique possible.
+    	\nTenez moi aussi au courant de votre utilisation de ce projet et de ce que vous en attendez de manière générale.
     	\n
-    	\nEn tous cas, j\'espère que vous appréciez ce petit starter avec des options sympatiques.
-    	\nJ\'ai vraiment plus d\'idée sur ce que je pourrais dire, j\'espère que le contenu sera assez long
-    	parce que ça commence à être relou de taper...
-    	\n
-    	\nEncore un peu de texte pour la forme et le volume...
+    	\nHave fun :)
     </string>
-    <string name="ratingtitle">Noter cette application</string>
+    <string name="ratingtitle">Votez pour soutenir cette application</string>
     <string name="ratingcontent">
-    	Si cette application vous plait, vous pouvez la noter.
-    	\nVoulez vous noter l\'application ?
+    	Afin d\'aider et de promouvoir cette application, vous pouvez voter sur le market et laisser un commentaire.
+    	\nIl est important pour une application d\'avoir des retours de ses utilisateurs pour être visible et pouvoir s\'améliorer.
+    	\n
+    	\nVoulez vous noter cette application sur le market ?
     </string>
     <string name="nomoreprint">Ne plus afficher</string>
     
