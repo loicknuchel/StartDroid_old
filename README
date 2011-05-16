@@ -20,6 +20,7 @@ Il intègre un certain nombre d'éléments très souvents utilisés lors des pro
 	- tab activity
 	- exemples de services (scanner)
 	- proposer de noter l'appli au bout de qqes utilisations
+	- thème personnalisé
 
 Démarrer un projet avec StartDroid vous permettra d'une part d'avoir une base pour de nombreuses 
 fonctionnalités et d'autre part d'en découvrir de nouvelles déjà implémentées dans votre projet.
@@ -37,7 +38,6 @@ Liste des fonctionnalités à venir :
 	- exemples de services (photo, contacts...)
 	- service rest
 	- async task
-	- thème personnalisé
 	- widget sample
 	- acra
 	- analytics
