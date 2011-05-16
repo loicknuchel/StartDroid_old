@@ -1,90 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
     
-	<Button
-	    android:id="@+id/test"
-	    android:text="@string/SAstart_testFeature"
-	    android:layout_width="wrap_content" 
-	    android:layout_height="wrap_content"
-	    />
-	
-	
-	
-	<LinearLayout
-	    android:orientation="vertical"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    >
-		<LinearLayout
-		    android:orientation="horizontal"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    >
-		    <Button
-			    android:id="@+id/goDashboard"
-			    android:text="@string/SAstart_goDashboard"
-			    android:layout_width="wrap_content" 
-			    android:layout_height="wrap_content"
-			    />
-		    <Button
-			    android:id="@+id/goActionBar"
-			    android:text="@string/SAstart_goActionBar"
-			    android:layout_width="wrap_content" 
-			    android:layout_height="wrap_content"
-			    />
-		    <Button
-			    android:id="@+id/goTabActivity"
-			    android:text="@string/SAstart_goTabActivity"
-			    android:layout_width="wrap_content" 
-			    android:layout_height="wrap_content"
-			    />
-		</LinearLayout>
-		<LinearLayout
-		    android:orientation="horizontal"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    >
-		    <Button
-			    android:id="@+id/goServicesActivity"
-			    android:text="@string/SAstart_goServicesActivity"
-			    android:layout_width="wrap_content" 
-			    android:layout_height="wrap_content"
-			    />
-		</LinearLayout>
-	</LinearLayout>
-	
-	
-	
-	<LinearLayout
-	    android:orientation="horizontal"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    >
-	    <Button
-		    android:id="@+id/goSampleSettings"
-		    android:text="@string/SAstart_goSampleSettings"
-		    android:layout_width="wrap_content" 
-		    android:layout_height="wrap_content"
-		    />
+    
+ 	<LinearLayout
+    	android:orientation="vertical"
+ 		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
 		<Button
-		    android:id="@+id/readSampleSettings"
-		    android:text="@string/SAstart_readSampleSettings"
+		    android:id="@+id/test"
+		    android:text="@string/SAstart_testFeature"
 		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content"
 		    />
-	</LinearLayout>
+		
+		
+		
+		<LinearLayout
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    >
+			<LinearLayout
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    >
+			    <Button
+				    android:id="@+id/goDashboard"
+				    android:text="@string/SAstart_goDashboard"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    />
+			    <Button
+				    android:id="@+id/goActionBar"
+				    android:text="@string/SAstart_goActionBar"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    />
+			    <Button
+				    android:id="@+id/goTabActivity"
+				    android:text="@string/SAstart_goTabActivity"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    />
+			</LinearLayout>
+			<LinearLayout
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    >
+			    <Button
+				    android:id="@+id/goServicesActivity"
+				    android:text="@string/SAstart_goServicesActivity"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    />
+			</LinearLayout>
+		</LinearLayout>
+		
+		
+		
+		<LinearLayout
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    >
+		    <Button
+			    android:id="@+id/goSampleSettings"
+			    android:text="@string/SAstart_goSampleSettings"
+			    android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"
+			    />
+			<Button
+			    android:id="@+id/readSampleSettings"
+			    android:text="@string/SAstart_readSampleSettings"
+			    android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"
+			    />
+		</LinearLayout>
+		
+		
+		
+		<Button
+		    android:id="@+id/isNetworkAvailable"
+		    android:text="@string/SAstart_isNetworkAvailable"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		    />
+ 	</LinearLayout>
 	
-	
-	
-	<Button
-	    android:id="@+id/isNetworkAvailable"
-	    android:text="@string/SAstart_isNetworkAvailable"
-	    android:layout_width="wrap_content" 
-	    android:layout_height="wrap_content"
-	    />
-	
-</LinearLayout>
+</ScrollView>

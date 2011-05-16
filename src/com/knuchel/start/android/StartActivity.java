@@ -41,9 +41,9 @@ public class StartActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start);
 		c = getApplicationContext();
-		Popup.displayIfFirstUse(getApplicationContext(), StartActivity.this);
 		Popup.displayRatingApp(getApplicationContext(), StartActivity.this, 6,
 				false);
+		Popup.displayIfFirstUse(getApplicationContext(), StartActivity.this);
 		setUp();
 		onCLickValidate();
 	}

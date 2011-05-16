@@ -11,10 +11,15 @@
 	    app:title="@string/ABOA_title"
 	    style="@style/ActionBar"
         />
-        
-	<TextView
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content" 
-	    android:text="@string/ABOA_texte"
-	    />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        > 
+		<TextView
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="@string/ABOA_texte"
+		    />
+    </ScrollView>
 </LinearLayout>
