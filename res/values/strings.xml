@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!-- General textes -->
+<!-- Application textes -->
     <string name="app_name">StartDroid</string>
-    <string name="retBtn">Retour</string>
-    <string name="prefs">Préférences</string>
+    
+<!-- General textes -->
+    <string name="ret">Retour</string>
     <string name="validate">OK</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
+    <string name="prefs">Préférences</string>
     
 <!-- HomeActivity textes -->
     <string name="HA_layout_btn">Layout sample</string>

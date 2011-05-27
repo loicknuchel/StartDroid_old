@@ -15,101 +15,101 @@ import com.knuchel.start.android.utils.Popup;
 import com.knuchel.start.android.utils.Strings;
 
 public class SettingsActivity extends PreferenceActivity {
-	private Context c;
+    private Context c;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		addPreferencesFromResource(R.xml.preferences);
-		c = getApplicationContext();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	addPreferencesFromResource(R.xml.preferences);
+	c = getApplicationContext();
 
-		// Gestion des preferences custom
-		Preference FAQPref = (Preference) findPreference("FAQPref");
-		FAQPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getBaseContext(),
-						Strings.get(c, R.string.SApref_faqclicked),
-						Toast.LENGTH_SHORT).show();
-				return true;
-			}
+	// Gestion des preferences custom
+	Preference FAQPref = (Preference) findPreference("FAQPref");
+	FAQPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+	    public boolean onPreferenceClick(Preference preference) {
+		Toast.makeText(getBaseContext(),
+			Strings.get(c, R.string.SApref_faqclicked),
+			Toast.LENGTH_SHORT).show();
+		return true;
+	    }
+	});
+
+	Preference AboutPref = (Preference) findPreference("AboutPref");
+	AboutPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+	    public boolean onPreferenceClick(Preference preference) {
+		Popup.displayAbout(getApplicationContext(),
+			SettingsActivity.this);
+		return true;
+	    }
+	});
+
+	Preference FeedbackPref = (Preference) findPreference("FeedbackPref");
+	FeedbackPref
+		.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+		    public boolean onPreferenceClick(Preference preference) {
+			Popup.displayRatingApp(getApplicationContext(),
+				SettingsActivity.this, -1, true);
+			return true;
+		    }
 		});
 
-		Preference AboutPref = (Preference) findPreference("AboutPref");
-		AboutPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			public boolean onPreferenceClick(Preference preference) {
-				Popup.displayAbout(getApplicationContext(),
-						SettingsActivity.this);
-				return true;
-			}
+	Preference SharePref = (Preference) findPreference("SharePref");
+	SharePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+	    public boolean onPreferenceClick(Preference preference) {
+		startActivity(ExtraIntent.shareIntent(Strings.get(c,
+			R.string.SApref_shareapptext)));
+		return true;
+	    }
+	});
+
+	Preference FriendPref = (Preference) findPreference("FriendPref");
+	FriendPref
+		.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+		    public boolean onPreferenceClick(Preference preference) {
+			Toast.makeText(getBaseContext(),
+				Strings.get(c, R.string.SApref_friendclicked),
+				Toast.LENGTH_SHORT).show();
+			return true;
+		    }
 		});
 
-		Preference FeedbackPref = (Preference) findPreference("FeedbackPref");
-		FeedbackPref
-				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-					public boolean onPreferenceClick(Preference preference) {
-						Popup.displayRatingApp(getApplicationContext(),
-								SettingsActivity.this, -1, true);
-						return true;
-					}
-				});
+	Preference InitPref = (Preference) findPreference("InitPref");
+	InitPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+	    public boolean onPreferenceClick(Preference preference) {
+		final SharedPreferences.Editor editor = getSharedPreferences(
+			Config.PREFS, 0).edit();
+		editor.putBoolean(Config.PREFS_SHOW_START_POPUP, true);
+		editor.putInt(Config.PREFS_START_COUNT, 0);
+		editor.putBoolean(Config.PREFS_START_COUNT_SHOW, true);
+		editor.commit();
+		Toast.makeText(getBaseContext(),
+			Strings.get(c, R.string.SApref_initdone),
+			Toast.LENGTH_LONG).show();
+		return true;
+	    }
+	});
 
-		Preference SharePref = (Preference) findPreference("SharePref");
-		SharePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			public boolean onPreferenceClick(Preference preference) {
-				startActivity(ExtraIntent.shareIntent(Strings.get(c,
-						R.string.SApref_shareapptext)));
-				return true;
-			}
-		});
-
-		Preference FriendPref = (Preference) findPreference("FriendPref");
-		FriendPref
-				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-					public boolean onPreferenceClick(Preference preference) {
-						Toast.makeText(getBaseContext(),
-								Strings.get(c, R.string.SApref_friendclicked),
-								Toast.LENGTH_SHORT).show();
-						return true;
-					}
-				});
-
-		Preference InitPref = (Preference) findPreference("InitPref");
-		InitPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			public boolean onPreferenceClick(Preference preference) {
-				final SharedPreferences.Editor editor = getSharedPreferences(
-						Config.PREFS, 0).edit();
-				editor.putBoolean(Config.PREFS_SHOW_START_POPUP, true);
-				editor.putInt(Config.PREFS_START_COUNT, 0);
-				editor.putBoolean(Config.PREFS_START_COUNT_SHOW, true);
-				editor.commit();
-				Toast.makeText(getBaseContext(),
-						Strings.get(c, R.string.SApref_initdone),
-						Toast.LENGTH_LONG).show();
-				return true;
-			}
-		});
-
-		Preference ClosePref = (Preference) findPreference("ClosePref");
-		ClosePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getBaseContext(),
-						Strings.get(c, R.string.SApref_closeclicked),
-						Toast.LENGTH_SHORT).show();
-				// SharedPreferences customSharedPreference =
-				// getSharedPreferences("myCustomSharedPrefs",
-				// Activity.MODE_PRIVATE);
-				// SharedPreferences.Editor editor =
-				// customSharedPreference.edit();
-				// editor.putString("myCustomPref",
-				// "The preference has been clicked");
-				// editor.commit();
-				// System.exit(0);
-				Intent i = new Intent(c, StartActivity.class);
-				i.putExtra("action", "finish");
-				startActivity(i);
-				finish();
-				return true;
-			}
-		});
-	}
+	Preference ClosePref = (Preference) findPreference("ClosePref");
+	ClosePref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+	    public boolean onPreferenceClick(Preference preference) {
+		Toast.makeText(getBaseContext(),
+			Strings.get(c, R.string.SApref_closeclicked),
+			Toast.LENGTH_SHORT).show();
+		// SharedPreferences customSharedPreference =
+		// getSharedPreferences("myCustomSharedPrefs",
+		// Activity.MODE_PRIVATE);
+		// SharedPreferences.Editor editor =
+		// customSharedPreference.edit();
+		// editor.putString("myCustomPref",
+		// "The preference has been clicked");
+		// editor.commit();
+		// System.exit(0);
+		Intent i = new Intent(c, StartActivity.class);
+		i.putExtra("action", "finish");
+		startActivity(i);
+		finish();
+		return true;
+	    }
+	});
+    }
 }

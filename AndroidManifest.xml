@@ -15,16 +15,14 @@
         </activity>
         
         <activity android:name=".StartActivity"></activity>
-        <activity android:name=".DashboardActivity"></activity>
-        <activity android:name=".TabHostActivity"></activity>
-        <activity android:name=".TabFirstActivity"></activity>
-        <activity android:name=".TabSecondActivity"></activity>
-        <activity android:name=".ActionBarHomeActivity"></activity>
-        <activity android:name=".ActionBarOtherActivity"></activity>
-        <activity android:name=".ServicesActivity"></activity>
-        
         <activity android:name=".SettingsActivity"></activity>
-        <activity android:name="SampleSettingsActivity"></activity>
+        <activity android:name="demo.Demo_ActionBar_MainActivity"></activity>
+        <activity android:name="demo.Demo_ActionBar_OtherActivity"></activity>
+        <activity android:name="demo.Demo_Dashboard_MainActivity"></activity>
+        <activity android:name="demo.Demo_Services_MainActivity"></activity>
+        <activity android:name="demo.Demo_TabActivity_HostActivity"></activity>
+        <activity android:name="demo.Demo_TabActivity_FirstActivity"></activity>
+        <activity android:name="demo.Demo_TabActivity_SecondActivity"></activity>
     </application>
     
     <!-- Tester si la connexion au reseau est possible -->

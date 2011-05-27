@@ -3,20 +3,16 @@ package com.knuchel.start.android;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.Toast;
-import com.knuchel.start.android.config.Config;
-import com.knuchel.start.android.model.SamplePrefs;
+
+import com.knuchel.start.android.demo.Demo_ActionBar_OtherActivity;
 import com.knuchel.start.android.utils.ExtraIntent;
 import com.knuchel.start.android.utils.Menus;
-import com.knuchel.start.android.utils.Network;
 import com.knuchel.start.android.utils.Popup;
 import com.knuchel.start.android.utils.Strings;
 import com.knuchel.start.android.widget.ActionBar;
@@ -60,7 +56,7 @@ public class HomeActivity extends Activity {
 		.get(c, R.string.ABHA_share)),
 		R.drawable.ic_title_share_default);
 	otherAction = new IntentAction(this, new Intent(this,
-		ActionBarOtherActivity.class),
+		Demo_ActionBar_OtherActivity.class),
 		R.drawable.ic_title_export_default);
 
 	// attach event handler to dash buttons
@@ -125,35 +121,35 @@ public class HomeActivity extends Activity {
 	}
     }
 
-    private SamplePrefs savePrefs() {
-	SamplePrefs samplePrefs = new SamplePrefs();
-
-	SharedPreferences prefs = PreferenceManager
-		.getDefaultSharedPreferences(getBaseContext());
-	samplePrefs.setCheckboxPreference(prefs.getBoolean(
-		Config.SAMPLE_PREFS_NAME_CHECKBOX,
-		Config.SAMPLE_PREFS_DEFAULTVALUE_CHECKBOX));
-	samplePrefs.setListPreference(prefs.getString(
-		Config.SAMPLE_PREFS_NAME_LIST,
-		Config.SAMPLE_PREFS_DEFAULTVALUE_LIST));
-	samplePrefs.setEditTextPreference(prefs.getString(
-		Config.SAMPLE_PREFS_NAME_EDITTEXT,
-		Config.SAMPLE_PREFS_DEFAULTVALUE_EDITTEXT));
-	samplePrefs.setRingtonePreference(prefs.getString(
-		Config.SAMPLE_PREFS_NAME_RINGTONE,
-		Config.SAMPLE_PREFS_DEFAULTVALUE_RINGTONE));
-	samplePrefs.setSecondEditTextPreference(prefs.getString(
-		Config.SAMPLE_PREFS_NAME_SECONDEDITTEXT,
-		Config.SAMPLE_PREFS_DEFAULTVALUE_SECONDEDITTEXT));
-
-	SharedPreferences mySharedPreferences = getSharedPreferences(
-		Config.SAMPLE_PREFS2, Activity.MODE_PRIVATE);
-	samplePrefs.setCustomPref(mySharedPreferences.getString(
-		Config.SAMPLE_PREFS_NAME_CUSTOM,
-		Config.SAMPLE_PREFS_DEFAULTVALUE_CUSTOM));
-
-	return samplePrefs;
-    }
+    // private SamplePrefs savePrefs() {
+    // SamplePrefs samplePrefs = new SamplePrefs();
+    //
+    // SharedPreferences prefs = PreferenceManager
+    // .getDefaultSharedPreferences(getBaseContext());
+    // samplePrefs.setCheckboxPreference(prefs.getBoolean(
+    // Config.SAMPLE_PREFS_NAME_CHECKBOX,
+    // Config.SAMPLE_PREFS_DEFAULTVALUE_CHECKBOX));
+    // samplePrefs.setListPreference(prefs.getString(
+    // Config.SAMPLE_PREFS_NAME_LIST,
+    // Config.SAMPLE_PREFS_DEFAULTVALUE_LIST));
+    // samplePrefs.setEditTextPreference(prefs.getString(
+    // Config.SAMPLE_PREFS_NAME_EDITTEXT,
+    // Config.SAMPLE_PREFS_DEFAULTVALUE_EDITTEXT));
+    // samplePrefs.setRingtonePreference(prefs.getString(
+    // Config.SAMPLE_PREFS_NAME_RINGTONE,
+    // Config.SAMPLE_PREFS_DEFAULTVALUE_RINGTONE));
+    // samplePrefs.setSecondEditTextPreference(prefs.getString(
+    // Config.SAMPLE_PREFS_NAME_SECONDEDITTEXT,
+    // Config.SAMPLE_PREFS_DEFAULTVALUE_SECONDEDITTEXT));
+    //
+    // SharedPreferences mySharedPreferences = getSharedPreferences(
+    // Config.SAMPLE_PREFS2, Activity.MODE_PRIVATE);
+    // samplePrefs.setCustomPref(mySharedPreferences.getString(
+    // Config.SAMPLE_PREFS_NAME_CUSTOM,
+    // Config.SAMPLE_PREFS_DEFAULTVALUE_CUSTOM));
+    //
+    // return samplePrefs;
+    // }
 
     // gestion du menu
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,28 +1,38 @@
-package com.knuchel.start.android.utils;
+package com.knuchel.start.android.services;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 
 import com.knuchel.start.android.R;
 
-public class ExtraService {
-    public static void scan(final Context context, final Activity activity,
-	    final int resultCode) {
+public class ScanService {
+    public static void scan(final Activity activity, final int resultCode) {
+	scan(activity, resultCode,
+		"PRODUCT_MODE | ONE_D_MODE | QR_CODE_MODE | DATA_MATRIX_MODE");
+    }
+
+    public static void scan(final Activity activity, final int resultCode,
+	    String mode) {
 	Intent i = new Intent("com.google.zxing.client.android.SCAN");
+	i.putExtra("SCAN_MODE", mode);
 	i.setPackage("com.google.zxing.client.android");
 
 	try {
 	    activity.startActivityForResult(i, resultCode);
 	} catch (Exception e) {
 
-	    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-	    builder.setMessage(Strings.get(context, R.string.noScanerFound))
+	    AlertDialog.Builder builder = new AlertDialog.Builder(
+		    activity.getBaseContext());
+	    builder.setMessage(
+		    activity.getBaseContext().getResources()
+			    .getString(R.string.noScanerFound))
 		    .setCancelable(false)
-		    .setPositiveButton(Strings.get(context, R.string.yes),
+		    .setPositiveButton(
+			    activity.getBaseContext().getResources()
+				    .getString(R.string.yes),
 			    new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog,
@@ -36,7 +46,9 @@ public class ExtraService {
 				    dialog.cancel();
 				}
 			    })
-		    .setNegativeButton(Strings.get(context, R.string.no),
+		    .setNegativeButton(
+			    activity.getBaseContext().getResources()
+				    .getString(R.string.no),
 			    new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog,
@@ -49,5 +61,4 @@ public class ExtraService {
 	    ScannerNotFound.show();
 	}
     }
-
 }

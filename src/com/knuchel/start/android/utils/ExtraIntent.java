@@ -1,9 +1,9 @@
 package com.knuchel.start.android.utils;
 
-import com.knuchel.start.android.ActionBarHomeActivity;
-
 import android.content.Context;
 import android.content.Intent;
+
+import com.knuchel.start.android.demo.Demo_ActionBar_MainActivity;
 
 public class ExtraIntent {
     public static Intent shareIntent(String content) {
@@ -14,7 +14,7 @@ public class ExtraIntent {
     }
 
     public static Intent homeIntent(Context context) {
-	Intent i = new Intent(context, ActionBarHomeActivity.class);
+	Intent i = new Intent(context, Demo_ActionBar_MainActivity.class);
 	i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 	return i;
     }

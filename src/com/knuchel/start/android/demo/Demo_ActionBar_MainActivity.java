@@ -1,4 +1,4 @@
-package com.knuchel.start.android;
+package com.knuchel.start.android.demo;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,13 +9,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.knuchel.start.android.R;
 import com.knuchel.start.android.utils.ExtraIntent;
 import com.knuchel.start.android.utils.Strings;
 import com.knuchel.start.android.widget.ActionBar;
 import com.knuchel.start.android.widget.ActionBar.Action;
 import com.knuchel.start.android.widget.ActionBar.IntentAction;
 
-public class ActionBarHomeActivity extends Activity {
+public class Demo_ActionBar_MainActivity extends Activity {
     private Context c;
     private ActionBar actionBar;
     // private Action homeAction;
@@ -50,7 +51,7 @@ public class ActionBarHomeActivity extends Activity {
 		.get(c, R.string.ABHA_share)),
 		R.drawable.ic_title_share_default);
 	otherAction = new IntentAction(this, new Intent(this,
-		ActionBarOtherActivity.class),
+		Demo_ActionBar_OtherActivity.class),
 		R.drawable.ic_title_export_default);
 
 	startProgress = (Button) findViewById(R.id.start_progress);
@@ -129,7 +130,7 @@ public class ActionBarHomeActivity extends Activity {
 	    public void onClick(View view) {
 		int actionCount = actionBar.getActionCount();
 		actionBar.removeActionAt(actionCount - 1);
-		Toast.makeText(ActionBarHomeActivity.this,
+		Toast.makeText(Demo_ActionBar_MainActivity.this,
 			Strings.get(c, R.string.ABHA_remove),
 			Toast.LENGTH_SHORT).show();
 	    }
@@ -141,7 +142,7 @@ public class ActionBarHomeActivity extends Activity {
 		actionBar.addAction(new Action() {
 		    @Override
 		    public void performAction(View view) {
-			Toast.makeText(ActionBarHomeActivity.this,
+			Toast.makeText(Demo_ActionBar_MainActivity.this,
 				Strings.get(c, R.string.ABHA_add),
 				Toast.LENGTH_SHORT).show();
 		    }

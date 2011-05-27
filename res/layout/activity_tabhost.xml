@@ -6,7 +6,7 @@
     >
 	<Button
 	    android:id="@+id/hostTabRetBtn"
-	    android:text="@string/retBtn"
+	    android:text="@string/ret"
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content"
 	    />
