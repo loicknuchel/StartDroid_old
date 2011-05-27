@@ -23,7 +23,7 @@ public class ActionBarOtherActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.actionbarother);
+		setContentView(R.layout.activity_actionbarother);
 		c = getApplicationContext();
 		setUp();
 		setContents();

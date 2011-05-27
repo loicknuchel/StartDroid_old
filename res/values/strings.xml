@@ -7,6 +7,14 @@
     <string name="validate">OK</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
+    
+<!-- HomeActivity textes -->
+    <string name="HA_layout_btn">Layout sample</string>
+    <string name="HA_services_btn">Services sample</string>
+    <string name="HA_1_btn">button 1</string>
+    <string name="HA_2_btn">button 2</string>
+    <string name="HA_3_btn">button 3</string>
+    <string name="HA_4_btn">button 4</string>
 
 <!-- StartActivity textes -->
     <string name="SAstart_testFeature">Launch test</string>
@@ -145,5 +153,11 @@
 
 <!-- ActionBar textes -->
     <string name="actionbar_activity_not_found">Failed to open intent...</string>
+    
+<!-- arrays textes -->
+    <string name="array_text1">titi</string>
+    <string name="array_text2">toto</string>
+    <string name="array_text3">tata</string>
+    <string name="array_text4">tutu</string>
     
 </resources>

@@ -9,7 +9,7 @@ public class TabFirstActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.tabfirst);
+		setContentView(R.layout.activity_tabfirst);
 
 		// On récupère notre intent et la valeur que l'on affiche dans le
 		// TextView

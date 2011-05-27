@@ -39,13 +39,24 @@ public class StartActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.start);
+		setContentView(R.layout.activity_start);
 		c = getApplicationContext();
+		doAction();
 		Popup.displayRatingApp(getApplicationContext(), StartActivity.this, 6,
 				false);
 		Popup.displayIfFirstUse(getApplicationContext(), StartActivity.this);
 		setUp();
 		onCLickValidate();
+	}
+
+	protected void doAction() {
+		String action = getIntent().getStringExtra("action");
+		if (action != null) {
+			if (action.equals("finish")) {
+				Toast.makeText(c, "FINISH", Toast.LENGTH_LONG).show();
+				finish();
+			}
+		}
 	}
 
 	protected void setUp() {

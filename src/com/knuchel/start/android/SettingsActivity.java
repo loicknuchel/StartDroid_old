@@ -1,6 +1,7 @@
 package com.knuchel.start.android;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -102,8 +103,11 @@ public class SettingsActivity extends PreferenceActivity {
 				// editor.putString("myCustomPref",
 				// "The preference has been clicked");
 				// editor.commit();
-
-				System.exit(0);
+				// System.exit(0);
+				Intent i = new Intent(c, StartActivity.class);
+				i.putExtra("action", "finish");
+				startActivity(i);
+				finish();
 				return true;
 			}
 		});

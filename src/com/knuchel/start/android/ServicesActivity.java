@@ -19,7 +19,7 @@ public class ServicesActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.services);
+		setContentView(R.layout.activity_services);
 		c = getApplicationContext();
 		setUp();
 		onCLickValidate();

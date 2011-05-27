@@ -11,14 +11,15 @@ public class Network {
 	public static final boolean isNetworkAvailable(Context context) {
 		ConnectivityManager connectivityManager = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-		if (networkInfo != null) {
-			// System.out.println(networkInfo.getTypeName()); // mobile ou WIFI
-			State networkState = networkInfo.getState();
-			if (networkState.compareTo(State.CONNECTED) == 0) {
-				return true;
-			}
-		}
-		return false;
+		return connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
+//		NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+//		if (networkInfo != null) {
+//			// System.out.println(networkInfo.getTypeName()); // mobile ou WIFI
+//			State networkState = networkInfo.getState();
+//			if (networkState.compareTo(State.CONNECTED) == 0) {
+//				return true;
+//			}
+//		}
+//		return false;
 	}
 }

@@ -33,18 +33,23 @@ Si vous avez des remarques pour faire avancer le projet, surtout n'hésitez pas.
 
 Liste des fonctionnalités à venir :
 	- quick action bar
+	- liste de données organisées
 	- sqlite
 	- broadcast receiver
 	- exemples de services (photo, contacts...)
 	- service rest
 	- async task
 	- widget sample
+	- galerie photo
 	- acra
 	- analytics
 	- gestion du changement d'orientation du téléphone (portrait/paysage)
+	- application compatible tablette
 	- login par le compte google
 	- insérer du code C ou C++ dans une appli
 	- gérer une google map
+	- internationalisation (i18n)
+	- boutton quitter : suite de finish()
 	
 A noter : 
 	le code est volontairement peu commenté. 

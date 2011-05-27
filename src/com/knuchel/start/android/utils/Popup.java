@@ -32,7 +32,7 @@ public class Popup extends Activity {
 
 	public static void displayAbout(Context context, Activity activity) {
 		LayoutInflater factory = LayoutInflater.from(context);
-		final View alertDialogView = factory.inflate(R.layout.alertdialogabout,
+		final View alertDialogView = factory.inflate(R.layout.dialog_about,
 				null);
 
 		AlertDialog.Builder adb = new AlertDialog.Builder(activity);
@@ -55,7 +55,7 @@ public class Popup extends Activity {
 		if (prefs.getBoolean(Config.PREFS_SHOW_START_POPUP, true)) {
 			LayoutInflater factory = LayoutInflater.from(activity);
 			final View alertDialogView = factory.inflate(
-					R.layout.alertdialogstart, null);
+					R.layout.dialog_start, null);
 
 			AlertDialog.Builder adb = new AlertDialog.Builder(activity);
 			adb.setView(alertDialogView)
@@ -96,7 +96,7 @@ public class Popup extends Activity {
 				&& (prefs.getBoolean(Config.PREFS_START_COUNT_SHOW, true) || alwaysShow)) {
 			LayoutInflater factory = LayoutInflater.from(activity);
 			final View alertDialogView = factory.inflate(
-					R.layout.alertdialograteapp, null);
+					R.layout.dialog_rateapp, null);
 
 			AlertDialog.Builder adb = new AlertDialog.Builder(activity);
 			adb.setView(alertDialogView)
