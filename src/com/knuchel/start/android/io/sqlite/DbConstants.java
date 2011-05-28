@@ -1,6 +1,6 @@
 package com.knuchel.start.android.io.sqlite;
 
-public final class SqliteConfig {
+public final class DbConstants {
     public static final int VERSION_BDD = 1;
     public static final String NOM_BDD = "StartDroid.db";
 
