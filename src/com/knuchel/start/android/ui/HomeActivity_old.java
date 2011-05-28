@@ -17,7 +17,6 @@ import com.knuchel.start.android.ui.widget.ActionBar.Action;
 import com.knuchel.start.android.ui.widget.ActionBar.IntentAction;
 import com.knuchel.start.android.util.ExtraIntent;
 import com.knuchel.start.android.util.Menus;
-import com.knuchel.start.android.util.Popup;
 import com.knuchel.start.android.util.Strings;
 
 /*
@@ -26,8 +25,6 @@ import com.knuchel.start.android.util.Strings;
  */
 
 public class HomeActivity_old extends Activity {
-    private static final String TAG = "HomeActivity";
-    
     private Context c;
     private ActionBar actionBar;
     // private Action homeAction;
@@ -37,11 +34,11 @@ public class HomeActivity_old extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_home);
+	setContentView(R.layout.activity_home_old);
 	c = getApplicationContext();
 	doAction();
-//	Popup.displayRatingApp(c, HomeActivity.this, 6, false);
-//	Popup.displayIfFirstUse(c, HomeActivity.this);
+	// Popup.displayRatingApp(c, HomeActivity.this, 6, false);
+	// Popup.displayIfFirstUse(c, HomeActivity.this);
 	setUp();
 	setContents();
 	onCLickValidate();
@@ -159,8 +156,8 @@ public class HomeActivity_old extends Activity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-	return Menus.classicSelect(getApplicationContext(), HomeActivity_old.this,
-		item);
+	return Menus.classicSelect(getApplicationContext(),
+		HomeActivity_old.this, item);
     }
 
 }

@@ -9,8 +9,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.knuchel.start.android.R;
-import com.knuchel.start.android.config.Config;
 import com.knuchel.start.android.service.ScanService;
+import com.knuchel.start.android.util.Config;
 import com.knuchel.start.android.util.Popup;
 import com.knuchel.start.android.util.Strings;
 

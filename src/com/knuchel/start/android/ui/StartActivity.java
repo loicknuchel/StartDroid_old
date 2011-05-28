@@ -14,16 +14,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.knuchel.start.android.R;
-import com.knuchel.start.android.config.Config;
 import com.knuchel.start.android.model.SamplePrefs;
 import com.knuchel.start.android.ui.demo.Demo_ActionBar_MainActivity;
 import com.knuchel.start.android.ui.demo.Demo_Dashboard_MainActivity;
 import com.knuchel.start.android.ui.demo.Demo_Services_MainActivity;
 import com.knuchel.start.android.ui.demo.Demo_Settings_MainActivity;
 import com.knuchel.start.android.ui.demo.Demo_TabActivity_HostActivity;
+import com.knuchel.start.android.util.Config;
 import com.knuchel.start.android.util.Menus;
 import com.knuchel.start.android.util.Network;
-import com.knuchel.start.android.util.Popup;
 import com.knuchel.start.android.util.Strings;
 
 /*
@@ -48,8 +47,8 @@ public class StartActivity extends Activity {
 	setContentView(R.layout.activity_start);
 	c = getApplicationContext();
 	doAction();
-//	Popup.displayRatingApp(c, StartActivity.this, 6, false);
-//	Popup.displayIfFirstUse(c, StartActivity.this);
+	// Popup.displayRatingApp(c, StartActivity.this, 6, false);
+	// Popup.displayIfFirstUse(c, StartActivity.this);
 	setUp();
 	onCLickValidate();
     }

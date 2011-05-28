@@ -3,7 +3,6 @@ package com.knuchel.start.android.util;
 import android.app.Activity;
 import android.content.SharedPreferences;
 
-import com.knuchel.start.android.config.Config;
 
 public class Prefs {
     private static final String p = Config.PREFS;

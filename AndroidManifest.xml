@@ -17,7 +17,7 @@
 
 	<application android:label="@string/app_name" android:icon="@drawable/icon"
 		android:theme="@style/Theme.GeneralTheme">
-		<activity android:name=".ui.HomeActivity" android:label="@string/app_name"
+		<activity android:name=".ui.StartActivity" android:label="@string/app_name"
 			android:theme="@style/Theme.GeneralTheme.Home">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -25,8 +25,9 @@
 			</intent-filter>
 		</activity>
 
-		<activity android:name=".ui.StartActivityty"></activity>
-		<activity android:name=".ui.SettingsActivityty"></activity>
+		<activity android:name=".ui.HomeActivity"></activity>
+		<activity android:name=".ui.HomeActivity_old"></activity>
+		<activity android:name=".ui.SettingsActivity"></activity>
 		<activity android:name=".ui.demo.Demo_ActionBar_MainActivity"></activity>
 		<activity android:name=".ui.demo.Demo_ActionBar_OtherActivity"></activity>
 		<activity android:name=".ui.demo.Demo_Dashboard_MainActivity"></activity>
@@ -34,7 +35,7 @@
 		<activity android:name=".ui.demo.Demo_Settings_MainActivity"></activity>
 		<activity android:name=".ui.demo.Demo_TabActivity_HostActivity"></activity>
 		<activity android:name=".ui.demo.Demo_TabActivity_FirstActivity"></activity>
-		<activity android:name="ui.demo.Demo_TabActivity_SecondActivity"></activity>
+		<activity android:name=".ui.demo.Demo_TabActivity_SecondActivity"></activity>
 	</application>
 
 </manifest>

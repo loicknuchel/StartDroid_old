@@ -10,7 +10,7 @@ import android.preference.PreferenceActivity;
 import android.widget.Toast;
 
 import com.knuchel.start.android.R;
-import com.knuchel.start.android.config.Config;
+import com.knuchel.start.android.util.Config;
 import com.knuchel.start.android.util.Strings;
 
 public class Demo_Settings_MainActivity extends PreferenceActivity {

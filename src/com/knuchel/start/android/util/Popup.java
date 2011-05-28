@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.CheckBox;
 
 import com.knuchel.start.android.R;
-import com.knuchel.start.android.config.Config;
 
 public class Popup extends Activity {
 
