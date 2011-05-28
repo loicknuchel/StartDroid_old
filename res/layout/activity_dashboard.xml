@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     >
  
-    <com.knuchel.start.android.widget.Dashboard
+    <com.knuchel.start.android.ui.widget.Dashboard
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -31,6 +31,6 @@
             android:text="@string/DBA_personalbests"
             android:drawableTop="@drawable/dashboard_button_add" />    
  
-    </com.knuchel.start.android.widget.Dashboard>
+    </com.knuchel.start.android.ui.widget.Dashboard>
  
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     >
     
-    <com.knuchel.start.android.widget.ActionBar
+    <com.knuchel.start.android.ui.widget.ActionBar
 	    android:id="@+id/actionbar"
 	    app:title="@string/ABOA_title"
 	    style="@style/ActionBar"

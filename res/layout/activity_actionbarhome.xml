@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     
-    <com.knuchel.start.android.widget.ActionBar
+    <com.knuchel.start.android.ui.widget.ActionBar
         android:id="@+id/actionbar"
         style="@style/ActionBar"
         />
