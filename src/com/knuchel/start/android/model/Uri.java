@@ -1,6 +1,8 @@
 package com.knuchel.start.android.model;
 
-public class Uri {
+import com.knuchel.start.android.io.sqlite.DbAdapter;
+
+public class Uri implements DbAdapter {
     public long id;
     public long date;
     public String uri;

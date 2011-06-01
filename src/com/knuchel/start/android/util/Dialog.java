@@ -13,14 +13,16 @@ import android.widget.CheckBox;
 
 import com.knuchel.start.android.R;
 
-public class Popup extends Activity {
+// TODO ajouter de la généricité et factoriser le code !!!
 
-    public static void display(Context context, Activity activity,
-	    String title, String message) {
-	AlertDialog.Builder adb = new AlertDialog.Builder(activity);
+public class Dialog extends Activity {
+
+    public static void display(Activity a, String title, String message) {
+	AlertDialog.Builder adb = new AlertDialog.Builder(a);
 	adb.setTitle(title)
 		.setMessage(message)
-		.setPositiveButton(Strings.get(context, R.string.validate),
+		.setPositiveButton(
+			Strings.get(a.getBaseContext(), R.string.validate),
 			new DialogInterface.OnClickListener() {
 			    public void onClick(DialogInterface dialog,
 				    int which) {
@@ -29,16 +31,17 @@ public class Popup extends Activity {
 			}).show();
     }
 
-    public static void displayAbout(Context context, Activity activity) {
-	LayoutInflater factory = LayoutInflater.from(context);
+    public static void displayAbout(Activity a) {
+	LayoutInflater factory = LayoutInflater.from(a.getBaseContext());
 	final View alertDialogView = factory.inflate(R.layout.dialog_about,
 		null);
 
-	AlertDialog.Builder adb = new AlertDialog.Builder(activity);
+	AlertDialog.Builder adb = new AlertDialog.Builder(a);
 	adb.setView(alertDialogView)
-		.setTitle(Strings.get(context, R.string.abouttitle))
+		.setTitle(Strings.get(a.getBaseContext(), R.string.abouttitle))
 		.setIcon(R.drawable.about)
-		.setPositiveButton(Strings.get(context, R.string.validate),
+		.setPositiveButton(
+			Strings.get(a.getBaseContext(), R.string.validate),
 			new DialogInterface.OnClickListener() {
 			    public void onClick(DialogInterface dialog,
 				    int which) {
@@ -47,27 +50,30 @@ public class Popup extends Activity {
 			}).show();
     }
 
-    public static void displayIfFirstUse(final Context context,
-	    final Activity activity) {
-	SharedPreferences prefs = context.getSharedPreferences(Config.PREFS, 0);
+    public static void displayIfFirstUse(final Activity a) {
+	SharedPreferences prefs = a.getBaseContext().getSharedPreferences(
+		Config.PREFS, 0);
 
 	if (prefs.getBoolean(Config.PREFS_SHOW_START_POPUP, true)) {
-	    LayoutInflater factory = LayoutInflater.from(activity);
+	    LayoutInflater factory = LayoutInflater.from(a);
 	    final View alertDialogView = factory.inflate(R.layout.dialog_start,
 		    null);
 
-	    AlertDialog.Builder adb = new AlertDialog.Builder(activity);
+	    AlertDialog.Builder adb = new AlertDialog.Builder(a);
 	    adb.setView(alertDialogView)
-		    .setTitle(Strings.get(context, R.string.starttitle))
+		    .setTitle(
+			    Strings.get(a.getBaseContext(), R.string.starttitle))
 		    .setIcon(R.drawable.about)
-		    .setPositiveButton(Strings.get(context, R.string.validate),
+		    .setPositiveButton(
+			    Strings.get(a.getBaseContext(), R.string.validate),
 			    new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,
 					int which) {
 				    CheckBox noDisplay = (CheckBox) alertDialogView
 					    .findViewById(R.id.startcontentshow);
 				    if (noDisplay.isChecked()) {
-					final SharedPreferences.Editor editor = context
+					final SharedPreferences.Editor editor = a
+						.getBaseContext()
 						.getSharedPreferences(
 							Config.PREFS, 0).edit();
 					editor.putBoolean(
@@ -80,10 +86,11 @@ public class Popup extends Activity {
 	}
     }
 
-    public static void displayRatingApp(final Context context,
-	    final Activity activity, int startCount, Boolean alwaysShow) {
+    public static void displayRatingApp(final Activity a, int startCount,
+	    Boolean alwaysShow) {
 	int nbStart = 0;
-	SharedPreferences prefs = context.getSharedPreferences(Config.PREFS, 0);
+	SharedPreferences prefs = a.getBaseContext().getSharedPreferences(
+		Config.PREFS, 0);
 	nbStart = prefs.getInt(Config.PREFS_START_COUNT, 1);
 	final SharedPreferences.Editor editor = prefs.edit();
 	editor.putInt(Config.PREFS_START_COUNT, nbStart + 1);
@@ -93,22 +100,26 @@ public class Popup extends Activity {
 
 	if (nbStart > startCount
 		&& (prefs.getBoolean(Config.PREFS_START_COUNT_SHOW, true) || alwaysShow)) {
-	    LayoutInflater factory = LayoutInflater.from(activity);
+	    LayoutInflater factory = LayoutInflater.from(a);
 	    final View alertDialogView = factory.inflate(
 		    R.layout.dialog_rateapp, null);
 
-	    AlertDialog.Builder adb = new AlertDialog.Builder(activity);
+	    AlertDialog.Builder adb = new AlertDialog.Builder(a);
 	    adb.setView(alertDialogView)
-		    .setTitle(Strings.get(context, R.string.ratingtitle))
+		    .setTitle(
+			    Strings.get(a.getBaseContext(),
+				    R.string.ratingtitle))
 		    .setIcon(R.drawable.about)
-		    .setNegativeButton(Strings.get(context, R.string.no),
+		    .setNegativeButton(
+			    Strings.get(a.getBaseContext(), R.string.no),
 			    new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,
 					int which) {
 				    CheckBox noDisplay = (CheckBox) alertDialogView
 					    .findViewById(R.id.ratingcontentshow);
 				    if (noDisplay.isChecked()) {
-					final SharedPreferences.Editor editor = context
+					final SharedPreferences.Editor editor = a
+						.getBaseContext()
 						.getSharedPreferences(
 							Config.PREFS, 0).edit();
 					editor.putBoolean(
@@ -118,14 +129,16 @@ public class Popup extends Activity {
 				    }
 				}
 			    })
-		    .setPositiveButton(Strings.get(context, R.string.yes),
+		    .setPositiveButton(
+			    Strings.get(a.getBaseContext(), R.string.yes),
 			    new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,
 					int which) {
 				    CheckBox noDisplay = (CheckBox) alertDialogView
 					    .findViewById(R.id.ratingcontentshow);
 				    if (noDisplay.isChecked()) {
-					final SharedPreferences.Editor editor = context
+					final SharedPreferences.Editor editor = a
+						.getBaseContext()
 						.getSharedPreferences(
 							Config.PREFS, 0).edit();
 					editor.putBoolean(
@@ -138,7 +151,7 @@ public class Popup extends Activity {
 				    intent.setData(Uri
 					    .parse("market://details?id="
 						    + Config.APP_PACKAGE));
-				    activity.startActivity(intent);
+				    a.startActivity(intent);
 				}
 			    }).show();
 	}

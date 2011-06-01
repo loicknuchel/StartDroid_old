@@ -23,7 +23,7 @@ public class Demo_TabActivity_HostActivity extends TabActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_tabhost);
+	setContentView(R.layout.activity_demo_tabhost);
 	c = getApplicationContext();
 	setUp();
 	onCLickValidate();

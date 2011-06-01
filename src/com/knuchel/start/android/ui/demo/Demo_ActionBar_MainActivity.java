@@ -36,7 +36,7 @@ public class Demo_ActionBar_MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_actionbarhome);
+	setContentView(R.layout.activity_demo_actionbarhome);
 	c = getApplicationContext();
 	setUp();
 	setContents();

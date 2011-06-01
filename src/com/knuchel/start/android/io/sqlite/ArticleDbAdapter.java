@@ -12,6 +12,7 @@ import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 import com.knuchel.start.android.model.Article;
 
@@ -23,16 +24,30 @@ public class ArticleDbAdapter {
     private final Context mCtx;
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
-	public DatabaseHelper(Context context) {
-	    super(context, DbConstants.NOM_BDD, null, DbConstants.VERSION_BDD);
+	private static final String CREATE_ARTICLE_TABLE = "CREATE TABLE "
+		+ DbConstants.ARTICLE_TABLE + "(" + DbConstants.ARTICLE_COL_ID
+		+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+		+ DbConstants.ARTICLE_COL_BARCODE + " TEXT NOT NULL, "
+		+ DbConstants.ARTICLE_COL_BARCODEFORMAT + " TEXT NOT NULL, "
+		+ DbConstants.ARTICLE_COL_NAME + " TEXT NOT NULL, "
+		+ DbConstants.ARTICLE_COL_DATE + " INTEGER NOT NULL, "
+		+ DbConstants.ARTICLE_COL_PRICE + " FLOAT NOT NULL);";
+
+	public DatabaseHelper(Context context, String name, CursorFactory factory,
+		    int version) {
+	    super(context, name, factory, version);
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+	    db.execSQL(CREATE_ARTICLE_TABLE);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	    db.execSQL("DROP TABLE IF EXISTS " + DbConstants.ARTICLE_TABLE
+		    + ";");
+	    onCreate(db);
 	}
     }
 
@@ -41,7 +56,7 @@ public class ArticleDbAdapter {
     }
 
     public void open() throws SQLException {
-	mDbHelper = new DatabaseHelper(mCtx);
+	mDbHelper = new DatabaseHelper(mCtx, DbConstants.NOM_BDD, null, DbConstants.VERSION_BDD);
 	mDb = mDbHelper.getWritableDatabase();
     }
 

@@ -11,7 +11,7 @@ public class Demo_TabActivity_SecondActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_tabsecond);
+	setContentView(R.layout.activity_demo_tabsecond);
 
 	// On récupère notre intent et la valeur que l'on affiche dans le
 	// TextView

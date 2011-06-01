@@ -156,8 +156,7 @@ public class HomeActivity_old extends Activity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-	return Menus.classicSelect(getApplicationContext(),
-		HomeActivity_old.this, item);
+	return Menus.classicSelect(HomeActivity_old.this, item);
     }
 
 }

@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.knuchel.start.android.R;
 import com.knuchel.start.android.util.Config;
 import com.knuchel.start.android.util.ExtraIntent;
-import com.knuchel.start.android.util.Popup;
+import com.knuchel.start.android.util.Dialog;
 import com.knuchel.start.android.util.Strings;
 
 public class SettingsActivity extends PreferenceActivity {
@@ -38,8 +38,7 @@ public class SettingsActivity extends PreferenceActivity {
 	Preference AboutPref = (Preference) findPreference("AboutPref");
 	AboutPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 	    public boolean onPreferenceClick(Preference preference) {
-		Popup.displayAbout(getApplicationContext(),
-			SettingsActivity.this);
+		Dialog.displayAbout(SettingsActivity.this);
 		return true;
 	    }
 	});
@@ -48,8 +47,7 @@ public class SettingsActivity extends PreferenceActivity {
 	FeedbackPref
 		.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 		    public boolean onPreferenceClick(Preference preference) {
-			Popup.displayRatingApp(getApplicationContext(),
-				SettingsActivity.this, -1, true);
+			Dialog.displayRatingApp(SettingsActivity.this, -1, true);
 			return true;
 		    }
 		});

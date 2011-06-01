@@ -24,6 +24,7 @@
     <string name="SAstart_goDashboard">Dashboard\nActivity</string>
     <string name="SAstart_goActionBar">ActionBar\nActivity</string>
     <string name="SAstart_goTabActivity">Tab\nActivity</string>
+    <string name="SAstart_goSqliteActivity">Sqlite\nActivity</string>
     <string name="SAstart_goServicesActivity">Services\nActivity</string>
     <string name="SAstart_goSampleSettings">Sample Prefs</string>
     <string name="SAstart_readSampleSettings">Read Sample Pref</string>
@@ -32,6 +33,14 @@
     <string name="SAstart_MenuHelp">menuhelp</string>
     <string name="SAstart_MenuFAQ">sousmenufaq</string>
     
+<!-- Demo_Sqlite_HostActivity textes -->
+    <string name="DSHA_tests">tests</string>
+    <string name="DSHA_create">create</string>
+    <string name="DSHA_select">select</string>
+    
+<!-- Demo_Sqlite_TestActivity textes -->
+    <string name="DSTA_launch_test">Launch test</string>
+
 <!-- ActionBarHomeActivity textes -->
 	<string name="ABHA_title">Home</string>
 	<string name="ABHA_share">Shared from the ActionBar widget.</string>

@@ -20,7 +20,7 @@ public class Demo_Dashboard_MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_dashboard);
+	setContentView(R.layout.activity_demo_dashboard);
 	c = getApplicationContext();
 	setUp();
 	onCLickValidate();

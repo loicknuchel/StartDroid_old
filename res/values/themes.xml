@@ -2,7 +2,7 @@
 <resources>
 	<style name="Theme" parent="android:style/Theme" />
 	
-    <style name="Theme.GeneralTheme" parent="android:style/Theme.Light">
+    <style name="Theme.GeneralTheme" parent="android:style/Theme.Black">
         <item name="android:windowNoTitle">true</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:layout_width">fill_parent</item>

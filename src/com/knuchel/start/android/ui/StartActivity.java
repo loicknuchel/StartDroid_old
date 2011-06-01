@@ -19,6 +19,7 @@ import com.knuchel.start.android.ui.demo.Demo_ActionBar_MainActivity;
 import com.knuchel.start.android.ui.demo.Demo_Dashboard_MainActivity;
 import com.knuchel.start.android.ui.demo.Demo_Services_MainActivity;
 import com.knuchel.start.android.ui.demo.Demo_Settings_MainActivity;
+import com.knuchel.start.android.ui.demo.Demo_Sqlite_HostActivity;
 import com.knuchel.start.android.ui.demo.Demo_TabActivity_HostActivity;
 import com.knuchel.start.android.util.Config;
 import com.knuchel.start.android.util.Menus;
@@ -36,6 +37,7 @@ public class StartActivity extends Activity {
     private Button goDashboard;
     private Button goActionBar;
     private Button goTabActivity;
+    private Button goSqliteActivity;
     private Button goServicesActivity;
     private Button goSampleSettings;
     private Button readSampleSettings;
@@ -68,6 +70,7 @@ public class StartActivity extends Activity {
 	goDashboard = (Button) findViewById(R.id.goDashboard);
 	goActionBar = (Button) findViewById(R.id.goActionBar);
 	goTabActivity = (Button) findViewById(R.id.goTabActivity);
+	goSqliteActivity = (Button) findViewById(R.id.goSqliteActivity);
 	goServicesActivity = (Button) findViewById(R.id.goServicesActivity);
 	goSampleSettings = (Button) findViewById(R.id.goSampleSettings);
 	readSampleSettings = (Button) findViewById(R.id.readSampleSettings);
@@ -77,7 +80,7 @@ public class StartActivity extends Activity {
     private void onCLickValidate() {
 	test.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		Toast.makeText(getBaseContext(),
+		Toast.makeText(c,
 			Strings.get(c, R.string.SAstart_testFeaturetexte),
 			Toast.LENGTH_SHORT).show();
 	    }
@@ -85,40 +88,42 @@ public class StartActivity extends Activity {
 
 	goDashboard.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		Intent i = new Intent(getBaseContext(),
-			Demo_Dashboard_MainActivity.class);
+		Intent i = new Intent(c, Demo_Dashboard_MainActivity.class);
 		startActivity(i);
 	    }
 	});
 
 	goActionBar.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		Intent i = new Intent(getBaseContext(),
-			Demo_ActionBar_MainActivity.class);
+		Intent i = new Intent(c, Demo_ActionBar_MainActivity.class);
 		startActivity(i);
 	    }
 	});
 
 	goTabActivity.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		Intent i = new Intent(getBaseContext(),
-			Demo_TabActivity_HostActivity.class);
+		Intent i = new Intent(c, Demo_TabActivity_HostActivity.class);
+		startActivity(i);
+	    }
+	});
+
+	goSqliteActivity.setOnClickListener(new OnClickListener() {
+	    public void onClick(View v) {
+		Intent i = new Intent(c, Demo_Sqlite_HostActivity.class);
 		startActivity(i);
 	    }
 	});
 
 	goServicesActivity.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		Intent i = new Intent(getBaseContext(),
-			Demo_Services_MainActivity.class);
+		Intent i = new Intent(c, Demo_Services_MainActivity.class);
 		startActivity(i);
 	    }
 	});
 
 	goSampleSettings.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		Intent i = new Intent(getBaseContext(),
-			Demo_Settings_MainActivity.class);
+		Intent i = new Intent(c, Demo_Settings_MainActivity.class);
 		startActivity(i);
 	    }
 	});
@@ -128,7 +133,7 @@ public class StartActivity extends Activity {
 		SamplePrefs samplePrefs = savePrefs();
 
 		Toast.makeText(
-			getBaseContext(),
+			c,
 			"CheckboxPreference: "
 				+ Boolean.toString(samplePrefs
 					.isCheckboxPreference())
@@ -149,10 +154,9 @@ public class StartActivity extends Activity {
 	isNetworkAvailable.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
 		Toast.makeText(
-			getBaseContext(),
+			c,
 			Strings.get(c, R.string.SAstart_NetworkAvailable)
-				+ " : "
-				+ Network.isNetworkAvailable(getBaseContext()),
+				+ " : " + Network.isNetworkAvailable(c),
 			Toast.LENGTH_LONG).show();
 	    }
 	});
@@ -162,7 +166,7 @@ public class StartActivity extends Activity {
 	SamplePrefs samplePrefs = new SamplePrefs();
 
 	SharedPreferences prefs = PreferenceManager
-		.getDefaultSharedPreferences(getBaseContext());
+		.getDefaultSharedPreferences(c);
 	samplePrefs.setCheckboxPreference(prefs.getBoolean(
 		Config.SAMPLE_PREFS_NAME_CHECKBOX,
 		Config.SAMPLE_PREFS_DEFAULTVALUE_CHECKBOX));
@@ -194,8 +198,7 @@ public class StartActivity extends Activity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-	return Menus.classicSelect(getApplicationContext(), StartActivity.this,
-		item);
+	return Menus.classicSelect(StartActivity.this, item);
     }
 
 }

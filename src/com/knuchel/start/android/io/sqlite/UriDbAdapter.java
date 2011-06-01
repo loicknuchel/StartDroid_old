@@ -1,6 +1,7 @@
 package com.knuchel.start.android.io.sqlite;
 
 // http://stackoverflow.com/questions/4063510/multiple-table-sqlite-db-adapters-in-android
+// http://droidreign.com/2010/10/dev-tutorials-android-sqlite-database-basics/
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +24,27 @@ public class UriDbAdapter {
     private final Context mCtx;
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
+	private static final String CREATE_URI_TABLE = "CREATE TABLE "
+		+ DbConstants.URI_TABLE + "(" + DbConstants.URI_COL_ID
+		+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+		+ DbConstants.URI_COL_DATE + " INTEGER NOT NULL, "
+		+ DbConstants.URI_COL_URI + " TEXT NOT NULL, "
+		+ DbConstants.URI_COL_TYPE + " TEXT NOT NULL, "
+		+ DbConstants.URI_COL_CONTENT + " TEXT NOT NULL);";
+
 	public DatabaseHelper(Context context) {
 	    super(context, DbConstants.NOM_BDD, null, DbConstants.VERSION_BDD);
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+	    db.execSQL(CREATE_URI_TABLE);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	    db.execSQL("DROP TABLE IF EXISTS " + DbConstants.URI_TABLE + ";");
+	    onCreate(db);
 	}
     }
 

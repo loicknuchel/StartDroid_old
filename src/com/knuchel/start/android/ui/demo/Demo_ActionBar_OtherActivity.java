@@ -24,7 +24,7 @@ public class Demo_ActionBar_OtherActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_actionbarother);
+	setContentView(R.layout.activity_demo_actionbarother);
 	c = getApplicationContext();
 	setUp();
 	setContents();

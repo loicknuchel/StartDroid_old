@@ -19,7 +19,7 @@ public class Demo_Settings_MainActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	addPreferencesFromResource(R.xml.preferences_sample);
+	addPreferencesFromResource(R.xml.demo_preferences);
 	c = getApplicationContext();
 	// Get the custom preference
 	Preference customPref = (Preference) findPreference(Config.SAMPLE_PREFS);
