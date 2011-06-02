@@ -10,6 +10,8 @@
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     
+<!-- StartActivity textes -->
+
 <!-- Demo_Sqlite_CRUDActivity textes -->
     <string name="DSCA_keyvalue">keyValue</string>
     <string name="DSCA_id">id</string>

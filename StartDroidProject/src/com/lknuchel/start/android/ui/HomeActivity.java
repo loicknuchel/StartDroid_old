@@ -19,15 +19,15 @@ public class HomeActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	
+
 	if (Log.isLoggable(TAG, Log.DEBUG)) {
-            Log.e(TAG, "Test log : onCreate HomeActivity"); // error
-            Log.w(TAG, "Test log : onCreate HomeActivity"); // warning
-            Log.d(TAG, "Test log : onCreate HomeActivity"); // debug
-            Log.i(TAG, "Test log : onCreate HomeActivity"); // info
-            Log.v(TAG, "Test log : onCreate HomeActivity"); // verbose
-        }
-	
+	    Log.e(TAG, "Test log : onCreate HomeActivity"); // error
+	    Log.w(TAG, "Test log : onCreate HomeActivity"); // warning
+	    Log.d(TAG, "Test log : onCreate HomeActivity"); // debug
+	    Log.i(TAG, "Test log : onCreate HomeActivity"); // info
+	    Log.v(TAG, "Test log : onCreate HomeActivity"); // verbose
+	}
+
 	AnalyticsUtils.getInstance(this).trackPageView(URI);
 	setContentView(R.layout.activity_home);
     }

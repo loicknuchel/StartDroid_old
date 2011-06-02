@@ -36,11 +36,11 @@ public class Demo_Sqlite_HostActivity extends TabActivity {
 	tabHost.addTab(tabSpec);
 
 	// creation d'un second onglet
-	Intent intent2 = new Intent(this, Demo_TabActivity_FirstActivity.class);
+	Intent intent2 = new Intent(this, Demo_Sqlite_CRUDActivity.class);
 	// intent2.putExtra("valeur", Strings.get(c,
 	// R.string.THA_second_value));
-	tabSpec = tabHost.newTabSpec("tabCreate")
-		.setIndicator(getResources().getString(R.string.DSHA_create))
+	tabSpec = tabHost.newTabSpec("tabCRUD")
+		.setIndicator(getResources().getString(R.string.DSHA_CRUD))
 		.setContent(intent2);
 	tabHost.addTab(tabSpec);
 

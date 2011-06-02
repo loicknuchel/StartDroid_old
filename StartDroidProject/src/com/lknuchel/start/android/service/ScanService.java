@@ -1,12 +1,12 @@
 package com.lknuchel.start.android.service;
 
-import com.lknuchel.start.android.R;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+
+import com.lknuchel.start.android.R;
 
 public class ScanService {
     public static void scan(final Activity activity, final int resultCode) {

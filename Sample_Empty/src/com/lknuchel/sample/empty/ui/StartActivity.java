@@ -1,7 +1,6 @@
 package com.lknuchel.sample.empty.ui;
 
-import com.knuchel.sample.empty.R;
-import com.knuchel.sample.empty.R.layout;
+import com.lknuchel.sample.empty.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +10,6 @@ public class StartActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_start);
     }
 }

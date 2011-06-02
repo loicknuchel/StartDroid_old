@@ -10,20 +10,18 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public abstract class DbAdapterImpl<T> {
     protected static String dbTable;
-    protected static String idColName;
+    protected static String idCol;
     protected DatabaseHelper mDbHelper;
     protected SQLiteDatabase mDb;
     protected final Context mCtx;
 
     protected static class DatabaseHelper extends SQLiteOpenHelper {
 	protected static String CREATE_TABLE;
-	protected static String TABLE_NAME;
 
 	public DatabaseHelper(Context context) {
 	    super(context, DbConstants.NOM_BDD, null, DbConstants.VERSION_BDD);
@@ -36,7 +34,7 @@ public abstract class DbAdapterImpl<T> {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-	    db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME + ";");
+	    db.execSQL("DROP TABLE IF EXISTS " + dbTable + ";");
 	    onCreate(db);
 	}
     }
@@ -51,7 +49,7 @@ public abstract class DbAdapterImpl<T> {
     }
 
     public void close() {
-	mDbHelper.close();
+	mDb.close();
     }
 
     public SQLiteDatabase getBDD() {
@@ -63,33 +61,34 @@ public abstract class DbAdapterImpl<T> {
     }
 
     public int update(T val, long id) {
-	return mDb.update(dbTable, createValues(val), idColName + " = " + id,
-		null);
+	return mDb.update(dbTable, createValues(val), idCol + " = " + id, null);
     }
 
     public int update(T val) {
 	if (val instanceof DbAdapter) {
-	    return mDb.update(dbTable, createValues(val), idColName + " = "
+	    return mDb.update(dbTable, createValues(val), idCol + " = "
 		    + ((DbAdapter) val).getId(), null);
+	} else {
+	    throw new IllegalArgumentException(
+		    "T.class has to implement DbAdapter interface");
 	}
-	throw new IllegalArgumentException(
-		"T.class has to implement DbAdapter interface");
     }
 
     public T get(long id) {
-	Cursor c = mDb.query(dbTable, allColumns(), idColName + " = " + id,
-		null, null, null, null);
+	Cursor c = mDb.query(dbTable, allColumns(), idCol + " = " + id, null,
+		null, null, null);
 	return cursorToObject(c);
     }
 
     public T get(T val) {
 	if (val instanceof DbAdapter) {
-	    Cursor c = mDb.query(dbTable, allColumns(), idColName + " = "
+	    Cursor c = mDb.query(dbTable, allColumns(), idCol + " = "
 		    + ((DbAdapter) val).getId(), null, null, null, null);
 	    return cursorToObject(c);
+	} else {
+	    throw new IllegalArgumentException(
+		    "T.class has to implement DbAdapter interface");
 	}
-	throw new IllegalArgumentException(
-		"T.class has to implement DbAdapter interface");
     }
 
     public List<T> getAll() {
@@ -99,12 +98,13 @@ public abstract class DbAdapterImpl<T> {
     }
 
     public List<T> getAll(String orderBy, String limit) {
-	Cursor c = mDb.query(dbTable, allColumns(), null, null, null, null, orderBy, limit);
+	Cursor c = mDb.query(dbTable, allColumns(), null, null, null, null,
+		orderBy, limit);
 	return cursorToObjectList(c);
     }
 
     public boolean delete(long id) {
-	return mDb.delete(dbTable, idColName + " = " + id, null) > 0;
+	return mDb.delete(dbTable, idCol + " = " + id, null) > 0;
     }
 
     public boolean deleteAll() {
@@ -155,34 +155,27 @@ public abstract class DbAdapterImpl<T> {
 
     protected abstract ContentValues createValues(T val);
 
+    // protected ContentValues createValues(KeyValue val) {
     // ContentValues values = new ContentValues();
-    // values.put(DbConstants.ARTICLE_COL_BARCODE, val.getBarcode());
-    // values.put(DbConstants.ARTICLE_COL_BARCODEFORMAT,
-    // val.getBarcodeFormat());
-    // values.put(DbConstants.ARTICLE_COL_NAME, val.getName());
-    // values.put(DbConstants.ARTICLE_COL_DATE, val.getDate());
-    // values.put(DbConstants.ARTICLE_COL_PRICE, val.getPrice());
+    // values.put(DbConstants.KEYVALUE_COL_KEY, val.getKey());
+    // values.put(DbConstants.KEYVALUE_COL_VALUE, val.getValue());
     // return values;
     // }
 
     protected abstract T affectCursor(Cursor c);
 
-    // Article ret = new Article();
-    // ret.setId(c.getLong(DbConstants.ARTICLE_NUM_COL_ID));
-    // ret.setBarcode(c.getString(DbConstants.ARTICLE_NUM_COL_BARCODE));
-    // ret.setBarcodeFormat(c
-    // .getString(DbConstants.ARTICLE_NUM_COL_BARCODEFORMAT));
-    // ret.setName(c.getString(DbConstants.ARTICLE_NUM_COL_NAME));
-    // ret.setDate(c.getLong(DbConstants.ARTICLE_NUM_COL_DATE));
-    // ret.setPrice(c.getFloat(DbConstants.ARTICLE_NUM_COL_PRICE));
-    // return ret;
+    // protected KeyValue affectCursor(final Cursor c) {
+    // KeyValue keyValue = new KeyValue();
+    // keyValue.setId(c.getLong(DbConstants.KEYVALUE_NUM_COL_ID));
+    // keyValue.setKey(c.getString(DbConstants.KEYVALUE_NUM_COL_KEY));
+    // keyValue.setValue(c.getString(DbConstants.KEYVALUE_NUM_COL_VALUE));
+    // return keyValue;
     // }
 
     protected abstract String[] allColumns();
-    // return new String[] { DbConstants.ARTICLE_COL_ID,
-    // DbConstants.ARTICLE_COL_BARCODE,
-    // DbConstants.ARTICLE_COL_BARCODEFORMAT,
-    // DbConstants.ARTICLE_COL_NAME, DbConstants.ARTICLE_COL_DATE,
-    // DbConstants.ARTICLE_COL_PRICE };
+
+    // private String[] allColumns() {
+    // return new String[] { DbConstants.KEYVALUE_COL_ID,
+    // DbConstants.KEYVALUE_COL_KEY, DbConstants.KEYVALUE_COL_VALUE };
     // }
 }

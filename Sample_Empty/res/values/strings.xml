@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, StartActivity!</string>
+<!-- Application textes -->
     <string name="app_name">Sample_Empty</string>
+    
+<!-- General textes -->
+    <string name="ret">Retour</string>
+    <string name="cancel">Annuler</string>
+    <string name="validate">OK</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    
+<!-- StartActivity textes -->
+    
 </resources>
