@@ -10,9 +10,9 @@
  		android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
 		<Button
-		    android:id="@+id/test"
-		    android:text="@string/SAstart_testFeature"
-		    android:layout_width="wrap_content" 
+		    android:id="@+activity_start/getCode"
+		    android:text="@string/SAstart_getCode"
+		    android:layout_width="fill_parent" 
 		    android:layout_height="wrap_content"
 		    />
 		
@@ -29,19 +29,19 @@
 			    android:layout_height="wrap_content"
 			    >
 			    <Button
-				    android:id="@+id/goDashboard"
+				    android:id="@+activity_start/goDashboard"
 				    android:text="@string/SAstart_goDashboard"
 				    android:layout_width="wrap_content" 
 				    android:layout_height="wrap_content"
 				    />
 			    <Button
-				    android:id="@+id/goActionBar"
+				    android:id="@+activity_start/goActionBar"
 				    android:text="@string/SAstart_goActionBar"
 				    android:layout_width="wrap_content" 
 				    android:layout_height="wrap_content"
 				    />
 			    <Button
-				    android:id="@+id/goTabActivity"
+				    android:id="@+activity_start/goTabActivity"
 				    android:text="@string/SAstart_goTabActivity"
 				    android:layout_width="wrap_content" 
 				    android:layout_height="wrap_content"
@@ -53,13 +53,13 @@
 			    android:layout_height="wrap_content"
 			    >
 			    <Button
-				    android:id="@+id/goSqliteActivity"
+				    android:id="@+activity_start/goSqliteActivity"
 				    android:text="@string/SAstart_goSqliteActivity"
 				    android:layout_width="wrap_content" 
 				    android:layout_height="wrap_content"
 				    />
 			    <Button
-				    android:id="@+id/goServicesActivity"
+				    android:id="@+activity_start/goServicesActivity"
 				    android:text="@string/SAstart_goServicesActivity"
 				    android:layout_width="wrap_content" 
 				    android:layout_height="wrap_content"
@@ -75,13 +75,13 @@
 		    android:layout_height="wrap_content"
 		    >
 		    <Button
-			    android:id="@+id/goSampleSettings"
+			    android:id="@+activity_start/goSampleSettings"
 			    android:text="@string/SAstart_goSampleSettings"
 			    android:layout_width="wrap_content" 
 			    android:layout_height="wrap_content"
 			    />
 			<Button
-			    android:id="@+id/readSampleSettings"
+			    android:id="@+activity_start/readSampleSettings"
 			    android:text="@string/SAstart_readSampleSettings"
 			    android:layout_width="wrap_content" 
 			    android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
 		
 		
 		<Button
-		    android:id="@+id/isNetworkAvailable"
+		    android:id="@+activity_start/isNetworkAvailable"
 		    android:text="@string/SAstart_isNetworkAvailable"
 		    android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content"

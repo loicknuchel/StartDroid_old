@@ -2,6 +2,7 @@
 <resources>
 <!-- Application textes -->
     <string name="app_name">StartDroid</string>
+    <string name="codeLink">https://github.com/loicknuchel/StartDroid</string>
     
 <!-- General textes -->
     <string name="ret">Retour</string>
@@ -19,7 +20,9 @@
     <string name="HA_4_btn">button 4</string>
 
 <!-- StartActivity textes -->
-    <string name="SAstart_testFeature">Launch test</string>
+    <string name="SAstart_getCode">Get Source Code !!!</string>
+    <string name="SAstart_codeAvaiable">Le code source est disponible à cette adresse :</string>
+    <string name="SAstart_seeCode">Voulez vous aller à cette adresse ?</string>
     <string name="SAstart_testFeaturetexte">TEST !!!</string>
     <string name="SAstart_goDashboard">Dashboard\nActivity</string>
     <string name="SAstart_goActionBar">ActionBar\nActivity</string>

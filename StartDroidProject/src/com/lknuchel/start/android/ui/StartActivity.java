@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
@@ -22,6 +23,8 @@ import com.lknuchel.start.android.ui.demo.Demo_Settings_MainActivity;
 import com.lknuchel.start.android.ui.demo.Demo_Sqlite_HostActivity;
 import com.lknuchel.start.android.ui.demo.Demo_TabActivity_HostActivity;
 import com.lknuchel.start.android.util.Config;
+import com.lknuchel.start.android.util.Dialog;
+import com.lknuchel.start.android.util.DialogAdapter;
 import com.lknuchel.start.android.util.Menus;
 import com.lknuchel.start.android.util.Network;
 
@@ -30,9 +33,10 @@ import com.lknuchel.start.android.util.Network;
  * 	- Pensez à modifier le nom de package !!!
  */
 
-public class StartActivity extends Activity {
+public class StartActivity extends Activity implements DialogAdapter {
     private Context c;
-    private Button test;
+    private Activity a;
+    private Button getCode;
     private Button goDashboard;
     private Button goActionBar;
     private Button goTabActivity;
@@ -41,12 +45,14 @@ public class StartActivity extends Activity {
     private Button goSampleSettings;
     private Button readSampleSettings;
     private Button isNetworkAvailable;
+    private final int getCodeRequest = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_start);
 	c = getApplicationContext();
+	a = StartActivity.this;
 	doAction();
 	// Popup.displayRatingApp(c, StartActivity.this, 6, false);
 	// Popup.displayIfFirstUse(c, StartActivity.this);
@@ -65,25 +71,39 @@ public class StartActivity extends Activity {
     }
 
     protected void setUp() {
-	test = (Button) findViewById(R.id.test);
-	goDashboard = (Button) findViewById(R.id.goDashboard);
-	goActionBar = (Button) findViewById(R.id.goActionBar);
-	goTabActivity = (Button) findViewById(R.id.goTabActivity);
-	goSqliteActivity = (Button) findViewById(R.id.goSqliteActivity);
-	goServicesActivity = (Button) findViewById(R.id.goServicesActivity);
-	goSampleSettings = (Button) findViewById(R.id.goSampleSettings);
-	readSampleSettings = (Button) findViewById(R.id.readSampleSettings);
-	isNetworkAvailable = (Button) findViewById(R.id.isNetworkAvailable);
+	getCode = (Button) findViewById(R.activity_start.getCode);
+	goDashboard = (Button) findViewById(R.activity_start.goDashboard);
+	goActionBar = (Button) findViewById(R.activity_start.goActionBar);
+	goTabActivity = (Button) findViewById(R.activity_start.goTabActivity);
+	goSqliteActivity = (Button) findViewById(R.activity_start.goSqliteActivity);
+	goServicesActivity = (Button) findViewById(R.activity_start.goServicesActivity);
+	goSampleSettings = (Button) findViewById(R.activity_start.goSampleSettings);
+	readSampleSettings = (Button) findViewById(R.activity_start.readSampleSettings);
+	isNetworkAvailable = (Button) findViewById(R.activity_start.isNetworkAvailable);
+    }
+
+    public void onDialogResult(int requestCode, boolean result) {
+	if (requestCode == getCodeRequest) {
+	    if (result == true) {
+		final Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse(getResources().getString(
+			R.string.codeLink)));
+		startActivity(intent);
+	    } else {
+
+	    }
+	}
     }
 
     private void onCLickValidate() {
-	test.setOnClickListener(new OnClickListener() {
+	getCode.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		Toast.makeText(
-			c,
-			getResources().getString(
-				R.string.SAstart_testFeaturetexte),
-			Toast.LENGTH_SHORT).show();
+		Dialog.displayChoice(a, getCodeRequest, getResources()
+			.getString(R.string.SAstart_codeAvaiable)
+			+ "\n\n"
+			+ getResources().getString(R.string.codeLink)
+			+ "\n\n"
+			+ getResources().getString(R.string.SAstart_seeCode));
 	    }
 	});
 

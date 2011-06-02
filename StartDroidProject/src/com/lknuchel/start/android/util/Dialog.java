@@ -16,7 +16,8 @@ import com.lknuchel.start.android.R;
 
 public class Dialog extends Activity {
 
-    public static void display(Activity a, String title, String message) {
+    public static void display(final Activity a, final String title,
+	    final String message) {
 	AlertDialog.Builder adb = new AlertDialog.Builder(a);
 	adb.setTitle(title)
 		.setMessage(message)
@@ -27,10 +28,90 @@ public class Dialog extends Activity {
 				    int which) {
 
 			    }
-			}).show();
+			});
+	adb.show();
     }
 
-    public static void displayAbout(Activity a) {
+    public static void display(final Activity a, final String message) {
+	AlertDialog.Builder adb = new AlertDialog.Builder(a);
+	adb.setMessage(message).setPositiveButton(
+		a.getResources().getString(R.string.validate),
+		new DialogInterface.OnClickListener() {
+		    public void onClick(DialogInterface dialog, int which) {
+
+		    }
+		});
+	adb.show();
+    }
+
+    public static void displayChoice(final Activity a, final String title,
+	    final int requestCode, final String message) {
+	AlertDialog.Builder adb = new AlertDialog.Builder(a);
+	adb.setTitle(title)
+		.setMessage(message)
+		.setPositiveButton(a.getResources().getString(R.string.yes),
+			new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog,
+				    int which) {
+				if (a instanceof DialogAdapter) {
+				    ((DialogAdapter) a).onDialogResult(
+					    requestCode, true);
+				} else {
+				    throw new IllegalArgumentException(
+					    "Activity has to implement DialogAdapter interface");
+				}
+			    }
+			})
+		.setNegativeButton(a.getResources().getString(R.string.no),
+			new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog,
+				    int which) {
+				if (a instanceof DialogAdapter) {
+				    ((DialogAdapter) a).onDialogResult(
+					    requestCode, false);
+				} else {
+				    throw new IllegalArgumentException(
+					    "Activity has to implement DialogAdapter interface");
+				}
+			    }
+			});
+	adb.show();
+    }
+
+    public static void displayChoice(final Activity a, final int requestCode,
+	    final String message) {
+	AlertDialog.Builder adb = new AlertDialog.Builder(a);
+	adb.setMessage(message)
+		.setPositiveButton(a.getResources().getString(R.string.yes),
+			new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog,
+				    int which) {
+				if (a instanceof DialogAdapter) {
+				    ((DialogAdapter) a).onDialogResult(
+					    requestCode, true);
+				} else {
+				    throw new IllegalArgumentException(
+					    "Activity has to implement DialogAdapter interface");
+				}
+			    }
+			})
+		.setNegativeButton(a.getResources().getString(R.string.no),
+			new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog,
+				    int which) {
+				if (a instanceof DialogAdapter) {
+				    ((DialogAdapter) a).onDialogResult(
+					    requestCode, false);
+				} else {
+				    throw new IllegalArgumentException(
+					    "Activity has to implement DialogAdapter interface");
+				}
+			    }
+			});
+	adb.show();
+    }
+
+    public static void displayAbout(final Activity a) {
 	LayoutInflater factory = LayoutInflater.from(a.getBaseContext());
 	final View alertDialogView = factory.inflate(R.layout.dialog_about,
 		null);
@@ -84,8 +165,8 @@ public class Dialog extends Activity {
 	}
     }
 
-    public static void displayRatingApp(final Activity a, int startCount,
-	    Boolean alwaysShow) {
+    public static void displayRatingApp(final Activity a, final int startCount,
+	    final Boolean alwaysShow) {
 	int nbStart = 0;
 	SharedPreferences prefs = a.getBaseContext().getSharedPreferences(
 		Config.PREFS, 0);

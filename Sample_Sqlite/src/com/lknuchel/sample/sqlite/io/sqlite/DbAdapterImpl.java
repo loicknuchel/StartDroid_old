@@ -68,9 +68,10 @@ public abstract class DbAdapterImpl<T> {
 	if (val instanceof DbAdapter) {
 	    return mDb.update(dbTable, createValues(val), idCol + " = "
 		    + ((DbAdapter) val).getId(), null);
+	} else {
+	    throw new IllegalArgumentException(
+		    "T.class has to implement DbAdapter interface");
 	}
-	throw new IllegalArgumentException(
-		"T.class has to implement DbAdapter interface");
     }
 
     public T get(long id) {
@@ -84,9 +85,10 @@ public abstract class DbAdapterImpl<T> {
 	    Cursor c = mDb.query(dbTable, allColumns(), idCol + " = "
 		    + ((DbAdapter) val).getId(), null, null, null, null);
 	    return cursorToObject(c);
+	} else {
+	    throw new IllegalArgumentException(
+		    "T.class has to implement DbAdapter interface");
 	}
-	throw new IllegalArgumentException(
-		"T.class has to implement DbAdapter interface");
     }
 
     public List<T> getAll() {
