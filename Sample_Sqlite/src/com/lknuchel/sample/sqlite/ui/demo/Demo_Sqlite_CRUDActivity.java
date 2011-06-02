@@ -1,5 +1,6 @@
 package com.lknuchel.sample.sqlite.ui.demo;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import com.lknuchel.sample.sqlite.R;
 import com.lknuchel.sample.sqlite.io.sqlite.DbConstants;
 import com.lknuchel.sample.sqlite.io.sqlite.V3_KeyValueHelper;
 import com.lknuchel.sample.sqlite.model.KeyValue;
+import com.lknuchel.sample.sqlite.model.Sample;
 
 public class Demo_Sqlite_CRUDActivity extends Activity {
     private Context c;
@@ -41,6 +43,7 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
 	setUp();
 	onCLickValidate();
 	displayList();
+	testsRelexivite();
     }
 
     protected void setUp() {
@@ -153,5 +156,24 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
 		android.R.layout.simple_list_item_1, keyValueListString);
 	keyValueListView.setAdapter(keyValueListAdapter);
 	keyValueListAdapter.notifyDataSetChanged();
+    }
+    
+    private void testsRelexivite(){
+	KeyValue tmp = new KeyValue();
+//	Toast.makeText(c, "CanonicalName: "+tmp.getClass().getCanonicalName(), Toast.LENGTH_LONG).show();
+//	Class cl = KeyValue.class;
+	Class cl = Sample.class;
+	
+	Field fs[] = cl.getDeclaredFields();
+	Toast.makeText(c, fs.length+" field found", Toast.LENGTH_LONG).show();
+	for(Field f : fs){
+	    Toast.makeText(c, "field: "+f.getName()+" / type: "+f.getGenericType().toString(), Toast.LENGTH_LONG).show();
+	}
+	
+	Class[] interfaces = cl.getInterfaces();
+	Toast.makeText(c, interfaces.length+" interface found", Toast.LENGTH_LONG).show();
+	for(Class inter : interfaces){
+	    Toast.makeText(c, "interface: "+inter.getName(), Toast.LENGTH_LONG).show();
+	}
     }
 }

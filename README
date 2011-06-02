@@ -20,6 +20,9 @@ StartDroid intègre les éléments suivants :
 		* popup d'aide au 1er lancement de l'appli
 		* popup proposant de noter l'appli au bout de qqes utilisations
 		* popup about
+	- persistance de données :
+		* préférences
+		* sqlite
 	- utilitaires et services :
 		* vérification de la présence et du type de réseau
 	- autres fonctionnalités :
@@ -41,8 +44,6 @@ Liste des fonctionnalités à venir :
 	- éléments contextuels :
 		* (soon) quick action bar
 	- persistance de données :
-		* (soon) préférences
-		* (soon) sqlite
 	- utilitaires et services :
 		* broadcast receiver
 		* (soon) async task

@@ -6,9 +6,9 @@ import android.database.Cursor;
 
 import com.lknuchel.sample.sqlite.model.KeyValue;
 
-public class V3_KeyValueHelper extends V3_DbAdapterImpl<KeyValue> {
+public class V4_KeyValueHelper extends V3_DbAdapterImpl<KeyValue> {
 
-    public V3_KeyValueHelper(Context context) {
+    public V4_KeyValueHelper(Context context) {
 	super(context);
 
 	dbTable = DbConstants.KEYVALUE_TABLE;

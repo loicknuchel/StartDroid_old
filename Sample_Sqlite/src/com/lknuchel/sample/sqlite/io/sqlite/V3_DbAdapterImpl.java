@@ -13,7 +13,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public abstract class DbAdapterImpl<T> {
+public abstract class V3_DbAdapterImpl<T> {
     protected static String dbTable;
     protected static String idCol;
     protected DatabaseHelper mDbHelper;
@@ -39,7 +39,7 @@ public abstract class DbAdapterImpl<T> {
 	}
     }
 
-    public DbAdapterImpl(Context context) {
+    public V3_DbAdapterImpl(Context context) {
 	mCtx = context;
     }
 
