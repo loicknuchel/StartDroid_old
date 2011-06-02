@@ -3,18 +3,18 @@
     android:focusable="true" 
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     
     <EditText
 		android:id="@+activity_demo_sqlite_crud/keyEdit" 
 		android:hint="@string/DSCA_key"
-		android:layout_width="fill_parent" 
+		android:layout_width="match_parent" 
 		android:layout_height="wrap_content" />
     <EditText
 		android:id="@+activity_demo_sqlite_crud/valueEdit" 
 		android:hint="@string/DSCA_value"
-		android:layout_width="fill_parent" 
+		android:layout_width="match_parent" 
 		android:layout_height="wrap_content" />
     
 	<Button 
@@ -25,7 +25,7 @@
 		
 	<ListView
 	    android:id="@+activity_demo_sqlite_crud/keyValueList"
-	    android:layout_width="fill_parent" 
+	    android:layout_width="match_parent" 
 	    android:layout_height="wrap_content"
 	    android:padding="10px"
 	    android:cacheColorHint="#00000000"
