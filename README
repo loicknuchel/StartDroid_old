@@ -1,0 +1,67 @@
+   _____ _              _   _____            _     _ 
+  / ____| |            | | |  __ \          (_)   | |
+ | (___ | |_  __ _ _ __| |_| |  | |_ __ ___  _  __| |
+  \___ \| __|/ _` | '__| __| |  | | '__/ _ \| |/ _` |
+  ____) | |_| (_| | |  | |_| |__| | | | (_) | | (_| |
+ |_____/ \__|\__,_|_|   \__|_____/|_|  \___/|_|\__,_|
+ 
+	StartDroid est un starter de projet Android.
+	Project from https://github.com/loicknuchel/StartDroid
+
+StartDroid composé d'un projet Android complet comportant un grand nombre de fonctionnalité intéressantes. Il a pour rôle de servir de base pour tout nouveau projet. D'autre projet sont aussi présent (sample) et focalisent sur un problème en particulier. Ils ont ainsi l'avantage d'être plus simples et de faciliter la compréhension du sujet.
+StartDroid intègre les éléments suivants :
+	- layouts :
+		* dashboard activity
+		* action bar
+		* tab activity
+		* les préférences
+	- éléments contextuels :
+		* les menus et sous menus
+		* popup d'aide au 1er lancement de l'appli
+		* popup proposant de noter l'appli au bout de qqes utilisations
+		* popup about
+	- utilitaires et services :
+		* vérification de la présence et du type de réseau
+	- autres fonctionnalités :
+		* possibilité de réinitialiser l'appli
+		* exemples de services (scanner)
+		* thème personnalisé
+
+Pour toute remarque, suggestion ou bug vous pouvez me contacter par mail : loicknuchel@gmail.com
+ou sur twitter : @loicknuchel
+Je suis ouvert à toute proposition de structuration du projet ou d'ajout de fonctionnalité.
+Si vous avez des remarques pour faire avancer le projet, surtout n'hésitez pas.
+
+
+Liste des fonctionnalités à venir :
+	- layouts :
+		* (soon) liste de données organisées
+		* widget sample
+		* gestion du changement d'orientation du téléphone (portrait/paysage)
+	- éléments contextuels :
+		* (soon) quick action bar
+	- persistance de données :
+		* (soon) préférences
+		* (soon) sqlite
+	- utilitaires et services :
+		* broadcast receiver
+		* (soon) async task
+		* (soon) service rest
+		* gérer une google map
+		* exemples de services (photo, contacts...)
+	- librairies :
+		* acra
+		* analytics
+	- autres fonctionnalités :
+		* galerie photo
+		* login par le compte google
+		* application compatible tablette
+		* insérer du code C ou C++ dans une appli
+		* (soon) internationalisation (i18n)
+	
+A noter : 
+	le code est volontairement peu commenté. 
+	Il s'agit d'un simple starter de projet et non code d'exemple à vocation pédagogique.
+	Toutefois, en fonction des retours et des demandes, je pourrais mettre plus de commentaires explicatifs 
+	et orienter les fonctionnalités.
+

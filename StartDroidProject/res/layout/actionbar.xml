@@ -95,7 +95,7 @@
                 android:visibility="gone"
                 style="@style/ActionBarProgressBar"
                 />
-            <com.knuchel.start.android.ui.widget.ScrollingTextView
+            <com.lknuchel.start.android.ui.widget.ScrollingTextView
                 android:id="@+id/actionbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

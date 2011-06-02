@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, StartActivity!</string>
+<!-- Application textes -->
     <string name="app_name">Sample_Sqlite</string>
+    
+<!-- General textes -->
+    <string name="ret">Retour</string>
+    <string name="cancel">Annuler</string>
+    <string name="validate">OK</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    
+<!-- Demo_Sqlite_CRUDActivity textes -->
+    <string name="DSCA_keyvalue">keyValue</string>
+    <string name="DSCA_id">id</string>
+    <string name="DSCA_key">clé</string>
+    <string name="DSCA_value">valeur</string>
+    <string name="DSCA_create">Créer</string>
+    <string name="DSCA_created">KeyValue created.</string>
+    <string name="DSCA_positionClicked">Click on position</string>
+    <string name="DSCA_removed">removed</string>
 </resources>
