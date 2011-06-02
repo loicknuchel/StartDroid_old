@@ -14,6 +14,8 @@
             </intent-filter>
         </activity>
 		<activity android:name=".ui.StartActivity"></activity>
+		<activity android:name=".ui.demo.Demo_ListView_BasicActivity"></activity>
+		<activity android:name=".ui.demo.Demo_ListView_AdapterActivity"></activity>
 
     </application>
 </manifest>

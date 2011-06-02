@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <!-- Application textes -->
-    <string name="app_name">Sample_Empty</string>
+    <string name="app_name">Sample Lists</string>
     
 <!-- General textes -->
     <string name="ret">Retour</string>

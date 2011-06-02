@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <!-- Application textes -->
-    <string name="app_name">Sample_Sqlite</string>
+    <string name="app_name">Sample Sqlite</string>
     
 <!-- General textes -->
     <string name="ret">Retour</string>
