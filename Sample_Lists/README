@@ -8,4 +8,9 @@
 	StartDroid est un starter de projet Android.
 	Project from https://github.com/loicknuchel/StartDroid
 
-Pour tout commentaire, question, suggestion ou signalisation de bug vous pouvez me joindre par mail à loicknuchel@gmail.com ou sur twitter @loicknuchel
+Sample_Lists est un projet qui a pour rôle de faire le tour des possibilités avec les listes sous Android.
+C'est un projet assez nouveau donc seule les implémentation les plus courantes sont présentes mais il devrait assez vite s'étoffer.
+	
+Pour toute remarque, suggestion ou bug vous pouvez me contacter par mail : loicknuchel@gmail.com
+ou sur twitter : @loicknuchel
+Je suis très ouvert à toute discution sur le projet ainsi qu'à toute proposition de structuration du projet ou d'ajout de fonctionnalité.

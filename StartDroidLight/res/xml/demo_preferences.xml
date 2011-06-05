@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/SSA_category_1">
+		<CheckBoxPreference
+			android:title="@string/SSA_checkbox_title"
+			android:summary="@string/SSA_checkbox_summary"
+			android:key="checkboxPref"
+			android:defaultValue="false" />
+		<ListPreference
+			android:title="@string/SSA_list_title"
+			android:summary="@string/SSA_list_summary"
+			android:key="listPref"
+			android:defaultValue="digiGreen"
+			android:entries="@array/listArray"
+			android:entryValues="@array/listValues" />
+	</PreferenceCategory>
+	
+	<PreferenceCategory android:title="@string/SSA_category_2">
+		<EditTextPreference
+			android:title="@string/SSA_edittext_title"
+			android:summary="@string/SSA_edittext_summary"
+			android:key="editTextPref"
+			android:defaultValue="@string/SSA_edittext_default"
+			android:name="EditText Preference" />
+		<RingtonePreference
+			android:title="@string/SSA_ringtone_title"
+			android:summary="@string/SSA_ringtone_summary"
+			android:key="ringtonePref"
+			android:name="Ringtone Preference" />
+		
+		<PreferenceScreen
+			android:title="@string/SSA_screen2_title"
+			android:summary="@string/SSA_screen2_summary"
+			android:key="SecondPrefScreen">
+			<EditTextPreference
+				android:title="@string/SSA_edittext2_title"
+				android:summary="@string/SSA_edittext2_summary"
+				android:key="SecondEditTextPref"
+				android:name="An other EditText Preference" />
+		</PreferenceScreen>
+		
+		<Preference
+			android:title="@string/SSA_custom_title"
+			android:summary="@string/SSA_custom_summary"
+			android:key="customPref" />
+	</PreferenceCategory>
+</PreferenceScreen>

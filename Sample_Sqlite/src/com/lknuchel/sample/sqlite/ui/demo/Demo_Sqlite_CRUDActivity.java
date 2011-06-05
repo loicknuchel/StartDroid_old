@@ -20,9 +20,10 @@ import android.widget.Toast;
 
 import com.lknuchel.sample.sqlite.R;
 import com.lknuchel.sample.sqlite.io.sqlite.DbConstants;
-import com.lknuchel.sample.sqlite.io.sqlite.V3_KeyValueHelper;
+import com.lknuchel.sample.sqlite.io.sqlite.V4_KeyNameHelper;
+import com.lknuchel.sample.sqlite.io.sqlite.V4_KeyValueHelper;
+import com.lknuchel.sample.sqlite.model.KeyName;
 import com.lknuchel.sample.sqlite.model.KeyValue;
-import com.lknuchel.sample.sqlite.model.Sample;
 
 public class Demo_Sqlite_CRUDActivity extends Activity {
     private Context c;
@@ -30,7 +31,9 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
     private EditText valueEdit;
     private Button createBtn;
     private ListView keyValueListView;
+    private String intentData = "keyValue";
     private List<KeyValue> keyValueList = null;
+    private List<KeyName> keyNameList = null;
     private List<String> keyValueListString = null;
     private ArrayAdapter<String> keyValueListAdapter = null;
 
@@ -40,10 +43,16 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_demo_sqlite_crud);
 	c = getApplicationContext();
+	intentData = getIntent().getStringExtra("dataType");
 	setUp();
 	onCLickValidate();
-	displayList();
-	testsRelexivite();
+	// testsRelexivite();
+    }
+
+    @Override
+    public void onResume() {
+	super.onResume();
+	displayList(intentData);
     }
 
     protected void setUp() {
@@ -51,16 +60,19 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
 	valueEdit = (EditText) findViewById(R.activity_demo_sqlite_crud.valueEdit);
 	createBtn = (Button) findViewById(R.activity_demo_sqlite_crud.createBtn);
 	keyValueListView = (ListView) findViewById(R.activity_demo_sqlite_crud.keyValueList);
+	if (intentData.equals("keyName")) {
+	    valueEdit.setHint(getResources().getString(R.string.DSCA_name));
+	}
     }
 
     private void onCLickValidate() {
 	createBtn.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		saveInSqlite(new KeyValue(keyEdit.getText().toString(),
-			valueEdit.getText().toString()));
+		saveInSqlite(keyEdit.getText().toString(), valueEdit.getText()
+			.toString(), intentData);
 		keyEdit.setText("");
 		valueEdit.setText("");
-		displayList();
+		displayList(intentData);
 		Toast.makeText(c,
 			getResources().getString(R.string.DSCA_created),
 			Toast.LENGTH_SHORT).show();
@@ -71,7 +83,12 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
 	    @Override
 	    public void onItemClick(final AdapterView<?> a, final View v,
 		    final int position, final long id) {
-		Long objId = keyValueList.get(position).getId();
+		Long objId;
+		if (intentData.equals("keyValue")) {
+		    objId = keyValueList.get(position).getId();
+		} else {
+		    objId = keyNameList.get(position).getId();
+		}
 		Toast.makeText(
 			c,
 			getResources().getString(R.string.DSCA_positionClicked)
@@ -86,69 +103,137 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
 		    @Override
 		    public boolean onItemLongClick(AdapterView<?> parent,
 			    View view, final int position, long id) {
-			Toast.makeText(
-				c,
-				getResources()
-					.getString(R.string.DSCA_keyvalue)
-					+ " "
-					+ keyValueList.get(position).getKey()
-					+ " / "
-					+ keyValueList.get(position).getValue()
-					+ " "
-					+ getResources().getString(
-						R.string.DSCA_removed) + ".",
-				Toast.LENGTH_SHORT).show();
-			removeInSqlite(keyValueList.get(position).getId());
-			displayList();
+			if (intentData.equals("keyValue")) {
+			    Toast.makeText(
+				    c,
+				    getResources().getString(
+					    R.string.DSCA_keyvalue)
+					    + " "
+					    + keyValueList.get(position)
+						    .getKey()
+					    + " / "
+					    + keyValueList.get(position)
+						    .getValue()
+					    + " "
+					    + getResources().getString(
+						    R.string.DSCA_removed)
+					    + ".", Toast.LENGTH_SHORT).show();
+			    removeInSqlite(keyValueList.get(position).getId(),
+				    intentData);
+			} else {
+			    Toast.makeText(
+				    c,
+				    getResources().getString(
+					    R.string.DSCA_keyvalue)
+					    + " "
+					    + keyNameList.get(position)
+						    .getKey()
+					    + " / "
+					    + keyNameList.get(position)
+						    .getName()
+					    + " "
+					    + getResources().getString(
+						    R.string.DSCA_removed)
+					    + ".", Toast.LENGTH_SHORT).show();
+			    removeInSqlite(keyNameList.get(position).getId(),
+				    intentData);
+
+			}
+			displayList(intentData);
 			return true;
 		    }
 		});
     }
 
-    private void saveInSqlite(KeyValue keyValue) {
-	V3_KeyValueHelper KeyValueHelper = new V3_KeyValueHelper(
-		Demo_Sqlite_CRUDActivity.this);
-	KeyValueHelper.open();
+    private void saveInSqlite(String key, String content, String type) {
+	if (type.equals("keyValue")) {
+	    KeyValue val = new KeyValue(key, content);
+	    V4_KeyValueHelper KeyValueHelper = new V4_KeyValueHelper(
+		    Demo_Sqlite_CRUDActivity.this);
+	    KeyValueHelper.open();
 
-	KeyValue b = KeyValueHelper.getWithValue(keyValue.getValue());
-	if (b != null) {
-	    KeyValueHelper.delete(b.getId());
+	    KeyValue b = KeyValueHelper.getWithValue(val.getValue());
+	    if (b != null) {
+		KeyValueHelper.delete(b.getId());
+	    }
+
+	    KeyValueHelper.insert(val);
+
+	    KeyValueHelper.close();
+	} else {
+	    KeyName val = new KeyName(key, content);
+	    V4_KeyNameHelper helper = new V4_KeyNameHelper(
+		    Demo_Sqlite_CRUDActivity.this);
+	    helper.open();
+
+	    KeyName b = helper.getWithName(val.getName());
+	    if (b != null) {
+		helper.delete(b.getId());
+	    }
+
+	    helper.insert(val);
+
+	    helper.close();
 	}
-
-	KeyValueHelper.insert(keyValue);
-
-	KeyValueHelper.close();
     }
 
-    private boolean removeInSqlite(long id) {
-	V3_KeyValueHelper KeyValueHelper = new V3_KeyValueHelper(
-		Demo_Sqlite_CRUDActivity.this);
-	KeyValueHelper.open();
-	KeyValueHelper.delete(id);
-	KeyValueHelper.close();
+    private boolean removeInSqlite(long id, String type) {
+	if (type.equals("keyValue")) {
+	    V4_KeyValueHelper helper = new V4_KeyValueHelper(
+		    Demo_Sqlite_CRUDActivity.this);
+	    helper.open();
+	    helper.delete(id);
+	    helper.close();
+	} else {
+
+	    V4_KeyNameHelper helper = new V4_KeyNameHelper(
+		    Demo_Sqlite_CRUDActivity.this);
+	    helper.open();
+	    helper.delete(id);
+	    helper.close();
+	}
 	return true;
     }
 
-    private void displayList() {
+    private void displayList(String type) {
 	List<KeyValue> tmpList = null;
-
-	V3_KeyValueHelper KeyValueHelper = new V3_KeyValueHelper(
-		Demo_Sqlite_CRUDActivity.this);
-	KeyValueHelper.open();
-
-	tmpList = KeyValueHelper.getAll(DbConstants.KEYVALUE_COL_KEY + " DESC",
-		null);
-
-	KeyValueHelper.close();
+	List<KeyName> tmpList2 = null;
 
 	keyValueListString = new ArrayList<String>();
 	keyValueList = new ArrayList<KeyValue>();
+	keyNameList = new ArrayList<KeyName>();
 
-	if (tmpList != null) {
-	    for (KeyValue b : tmpList) {
-		keyValueListString.add(b.getId() + " / " + b.getKey() + " - "
-			+ b.getValue());
-		keyValueList.add(b);
+	if (type.equals("keyValue")) {
+	    V4_KeyValueHelper helper = new V4_KeyValueHelper(
+		    Demo_Sqlite_CRUDActivity.this);
+	    helper.open();
+
+	    tmpList = helper.getAll(DbConstants.KEYVALUE_COL_KEY + " DESC",
+		    null);
+
+	    helper.close();
+
+	    if (tmpList != null) {
+		for (KeyValue b : tmpList) {
+		    keyValueListString.add(b.getKey() + " - " + b.getValue());
+		    keyValueList.add(b);
+		}
+	    }
+	} else {
+	    V4_KeyNameHelper helper = new V4_KeyNameHelper(
+		    Demo_Sqlite_CRUDActivity.this);
+	    helper.open();
+
+	    tmpList2 = helper.getAll(DbConstants.KEYNAME_COL_KEY + " DESC",
+		    null);
+
+	    helper.close();
+
+	    if (tmpList2 != null) {
+		for (KeyName b : tmpList2) {
+		    keyValueListString.add(b.getKey() + " - " + b.getName());
+		    keyNameList.add(b);
+		}
 	    }
 	}
 
@@ -157,23 +242,31 @@ public class Demo_Sqlite_CRUDActivity extends Activity {
 	keyValueListView.setAdapter(keyValueListAdapter);
 	keyValueListAdapter.notifyDataSetChanged();
     }
-    
-    private void testsRelexivite(){
+
+    private void testsRelexivite() {
 	KeyValue tmp = new KeyValue();
-//	Toast.makeText(c, "CanonicalName: "+tmp.getClass().getCanonicalName(), Toast.LENGTH_LONG).show();
-//	Class cl = KeyValue.class;
-	Class cl = Sample.class;
-	
+	// Toast.makeText(c,
+	// "CanonicalName: "+tmp.getClass().getCanonicalName(),
+	// Toast.LENGTH_LONG).show();
+	// Class cl = KeyValue.class;
+	Class cl = KeyName.class;
+
 	Field fs[] = cl.getDeclaredFields();
-	Toast.makeText(c, fs.length+" field found", Toast.LENGTH_LONG).show();
-	for(Field f : fs){
-	    Toast.makeText(c, "field: "+f.getName()+" / type: "+f.getGenericType().toString(), Toast.LENGTH_LONG).show();
+	Toast.makeText(c, fs.length + " field found", Toast.LENGTH_LONG).show();
+	for (Field f : fs) {
+	    Toast.makeText(
+		    c,
+		    "field: " + f.getName() + " / type: "
+			    + f.getGenericType().toString(), Toast.LENGTH_LONG)
+		    .show();
 	}
-	
+
 	Class[] interfaces = cl.getInterfaces();
-	Toast.makeText(c, interfaces.length+" interface found", Toast.LENGTH_LONG).show();
-	for(Class inter : interfaces){
-	    Toast.makeText(c, "interface: "+inter.getName(), Toast.LENGTH_LONG).show();
+	Toast.makeText(c, interfaces.length + " interface found",
+		Toast.LENGTH_LONG).show();
+	for (Class inter : interfaces) {
+	    Toast.makeText(c, "interface: " + inter.getName(),
+		    Toast.LENGTH_LONG).show();
 	}
     }
 }

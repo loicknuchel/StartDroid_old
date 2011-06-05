@@ -1,0 +1,25 @@
+Je vois principalement deux manières d'utiliser StartDroid (tenez moi au courant si vous voyez d'autre utilité) :
+	- apprendre en regardant des projets qui fonctionnent
+	- commencer une nouvelle application sans avoir les phases pénibles du début
+
+Pour la première utilisation, il n'y a rien à faire. 
+Importez le projet sous éclipse (Import -> Existing Projects into Workspace -> Select root directory) et vous pouvez directement commencer à jouer avec.
+
+En revanche, si vous souhaitez commencer une nouvelle application, il vous faudra renommer le projet et le package du projet que vous choisissez. 
+Pour cela, faites un F2 sur le projet (il ne devrait pas y avoir de problèmes). 
+Puis faites un F2 sur le package du projet et cochez les cases "Updates references", "Rename subpackages" et "Update textual occurences in comments ..." puis validez.
+Toutefois, éclipse gère assez mal certain parties du renommage (comme l'indiquent les problèmes qui apparaissent).
+Voici les problèmes à régler :
+	- AndroidManifest.xml : ligne 3, le package de l'application n'est pas renommé. Faites le. De plus, la dernière activité est mal renommé. Il faut que vous la réécriviez à la main et sans oublier le "." au début.
+	- dans les layout : certains layout font référence au package .ui.widget. Vous devez modifier ces références à la main. Ces layout sont :
+		* actionbar.xml
+		* activity_demo_actionbarhome.xml
+		* activity_demo_actionbarother.xml (attention à changer aussi le xmlns:app du LinearLayout)
+		* activity_demo_dashboard.xml
+		* activity_home_old.xml
+	- les sources Java où il y a des problèmes : cela vient de l'import import com.lknuchel.....R; qui n'a pas été modifié avec le nouveau nom de package. Pour cela faites un ctrl+maj+o pour réorganiser les import. Cette manipulation est à faire sur tous les fichiers (malheureusement...).
+	
+Une fois tout ceci fait, vous avez un projet nickel avec votre nom de package. Vous pouvez donc commencer (enfin).
+Have fun !!!
+		
+

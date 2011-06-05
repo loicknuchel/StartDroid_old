@@ -8,8 +8,11 @@
 	StartDroid est un starter de projet Android.
 	Project from https://github.com/loicknuchel/StartDroid
 
-StartDroid composé d'un projet Android complet comportant un grand nombre de fonctionnalité intéressantes. Il a pour rôle de servir de base pour tout nouveau projet. D'autre projet sont aussi présent (sample) et focalisent sur un problème en particulier. Ils ont ainsi l'avantage d'être plus simples et de faciliter la compréhension du sujet.
-StartDroid intègre les éléments suivants :
+StartDroid composé de plusieurs projets Android complet permettant de tester des fonctionnalités de manière indépendante (Sample) ou d'avoir un projet de démarrage plus ou moins complet (StartdDroidLight et StartDroidFull). 
+StartDroidLight est une application fonctionnelle qui ne demande qu'à être personnalisée pour être présentable. On peut facilement ajouter les projet Sample par de simple copié/collé. StartDroidFull est identique à StartDroidLight mais possède déjà tous les Sample intégré.
+Les différents README expliquent plus en détail les différents projets et donnent des pistes plus détaillées permettant de mieux approfondir un sujet.
+
+Voici les éléments disponibles dans StartDroid :
 	- layouts :
 		* dashboard activity
 		* action bar
@@ -32,8 +35,7 @@ StartDroid intègre les éléments suivants :
 
 Pour toute remarque, suggestion ou bug vous pouvez me contacter par mail : loicknuchel@gmail.com
 ou sur twitter : @loicknuchel
-Je suis ouvert à toute proposition de structuration du projet ou d'ajout de fonctionnalité.
-Si vous avez des remarques pour faire avancer le projet, surtout n'hésitez pas.
+Je suis très ouvert à toute discution sur le projet ainsi qu'à toute proposition de structuration du projet ou d'ajout de fonctionnalité.
 
 
 Liste des fonctionnalités à venir :
@@ -43,6 +45,7 @@ Liste des fonctionnalités à venir :
 		* gestion du changement d'orientation du téléphone (portrait/paysage)
 	- éléments contextuels :
 		* (soon) quick action bar
+		* share button
 	- persistance de données :
 	- utilitaires et services :
 		* broadcast receiver

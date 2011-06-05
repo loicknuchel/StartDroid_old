@@ -21,7 +21,18 @@ public abstract class V4_DbAdapterImpl<T> {
     protected final Context mCtx;
 
     protected static class DatabaseHelper extends SQLiteOpenHelper {
-	protected static String CREATE_TABLE;
+	protected static String CREATE_VALUE_TABLE = "CREATE TABLE "
+		+ DbConstants.KEYVALUE_TABLE + "("
+		+ DbConstants.KEYVALUE_COL_ID
+		+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+		+ DbConstants.KEYVALUE_COL_KEY + " TEXT NOT NULL, "
+		+ DbConstants.KEYVALUE_COL_VALUE + " TEXT NOT NULL);";
+
+	protected static String CREATE_NAME_TABLE = "CREATE TABLE "
+		+ DbConstants.KEYNAME_TABLE + "(" + DbConstants.KEYNAME_COL_ID
+		+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+		+ DbConstants.KEYNAME_COL_KEY + " TEXT NOT NULL, "
+		+ DbConstants.KEYNAME_COL_NAME + " TEXT NOT NULL);";
 
 	public DatabaseHelper(Context context) {
 	    super(context, DbConstants.NOM_BDD, null, DbConstants.VERSION_BDD);
@@ -29,22 +40,22 @@ public abstract class V4_DbAdapterImpl<T> {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-	    db.execSQL(CREATE_TABLE);
+	    db.execSQL(CREATE_VALUE_TABLE);
+	    db.execSQL(CREATE_NAME_TABLE);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-	    db.execSQL("DROP TABLE IF EXISTS " + dbTable + ";");
+	    db.execSQL("DROP TABLE IF EXISTS " + DbConstants.KEYVALUE_TABLE
+		    + ";");
+	    db.execSQL("DROP TABLE IF EXISTS " + DbConstants.KEYNAME_TABLE
+		    + ";");
 	    onCreate(db);
 	}
     }
 
     public V4_DbAdapterImpl(Context context) {
 	mCtx = context;
-    }
-    
-    private void generateTable(){
-	
     }
 
     public void open() {

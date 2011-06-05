@@ -2,15 +2,15 @@ package com.lknuchel.sample.lists.ui.widget;
 
 import java.util.List;
 
-import com.lknuchel.sample.lists.R;
-import com.lknuchel.sample.lists.model.Livre;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.lknuchel.sample.lists.R;
+import com.lknuchel.sample.lists.model.Livre;
 
 public class AdapterLivre extends BaseAdapter {
     private List<Livre> biblio;

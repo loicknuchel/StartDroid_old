@@ -16,16 +16,16 @@ public class V1_KeyValueHelper {
     private final String idCol = DbConstants.KEYVALUE_COL_ID;
     private final String keyCol = DbConstants.KEYVALUE_COL_KEY;
     private final String valueCol = DbConstants.KEYVALUE_COL_VALUE;
-    private V1_KeyValueBdd v1_KeyValueBdd;
+    private V1_Bdd v1_Bdd;
     private SQLiteDatabase mDb;
 
     public V1_KeyValueHelper(final Context context) {
-	v1_KeyValueBdd = new V1_KeyValueBdd(context, DbConstants.NOM_BDD, null,
+	v1_Bdd = new V1_Bdd(context, DbConstants.NOM_BDD, null,
 		DbConstants.VERSION_BDD);
     }
 
     public void open() {
-	mDb = v1_KeyValueBdd.getWritableDatabase();
+	mDb = v1_Bdd.getWritableDatabase();
     }
 
     public void close() {
@@ -41,24 +41,23 @@ public class V1_KeyValueHelper {
     }
 
     public int update(final KeyValue val, final long id) {
-	return mDb.update(dbTable, createValues(val),
-		idCol + " = " + id, null);
+	return mDb.update(dbTable, createValues(val), idCol + " = " + id, null);
     }
 
     public int update(final KeyValue val) {
-	return mDb.update(dbTable, createValues(val), idCol + " = "
-		+ val.getId(), null);
+	return mDb.update(dbTable, createValues(val),
+		idCol + " = " + val.getId(), null);
     }
 
     public KeyValue get(final long id) {
-	Cursor c = mDb.query(dbTable, allColumns(),
-		idCol + " = " + id + "\"", null, null, null, null);
+	Cursor c = mDb.query(dbTable, allColumns(), idCol + " = " + id + "\"",
+		null, null, null, null);
 	return cursorToObject(c);
     }
 
     public KeyValue get(final KeyValue val) {
-	Cursor c = mDb.query(dbTable, allColumns(),
-		idCol + " = " + val.getId() + "\"", null, null, null, null);
+	Cursor c = mDb.query(dbTable, allColumns(), idCol + " = " + val.getId()
+		+ "\"", null, null, null, null);
 	return cursorToObject(c);
     }
 

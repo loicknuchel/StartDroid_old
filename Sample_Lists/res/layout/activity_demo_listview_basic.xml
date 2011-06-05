@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-	android:layout_width="match_parent" 
+	android:orientation="vertical" 
+	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<ListView 
-		android:id="@+activity_demo_listview_main/lvListe" 
+	<Spinner 
+		android:id="@+activity_demo_listview_basic/listStyle" 
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="wrap_content" 
+		android:entries="@array/styleLists" />
+		
+	<Spinner 
+		android:id="@+activity_demo_listview_basic/nbLivres" 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:entries="@array/nbLivres" />
+
+	<ListView android:id="@+activity_demo_listview_basic/lvListe"
+		android:layout_width="match_parent" 
+		android:layout_height="wrap_content">
 
 	</ListView>
 

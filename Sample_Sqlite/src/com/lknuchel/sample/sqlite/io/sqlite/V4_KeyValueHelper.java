@@ -1,25 +1,22 @@
 package com.lknuchel.sample.sqlite.io.sqlite;
 
+import java.util.List;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
 import com.lknuchel.sample.sqlite.model.KeyValue;
 
-public class V4_KeyValueHelper extends V3_DbAdapterImpl<KeyValue> {
+public class V4_KeyValueHelper extends V4_DbAdapterImpl<KeyValue> {
 
     public V4_KeyValueHelper(Context context) {
 	super(context);
 
 	dbTable = DbConstants.KEYVALUE_TABLE;
 	idCol = DbConstants.KEYVALUE_COL_ID;
-
-	DatabaseHelper.CREATE_TABLE = "CREATE TABLE " + dbTable + "(" + idCol
-		+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-		+ DbConstants.KEYVALUE_COL_KEY + " TEXT NOT NULL, "
-		+ DbConstants.KEYVALUE_COL_VALUE + " TEXT NOT NULL);";
     }
-    
+
     public KeyValue getWithKey(final String key) {
 	Cursor c = mDb.query(dbTable, allColumns(),
 		DbConstants.KEYVALUE_COL_KEY + " LIKE \"" + key + "\"", null,
@@ -32,6 +29,19 @@ public class V4_KeyValueHelper extends V3_DbAdapterImpl<KeyValue> {
 		DbConstants.KEYVALUE_COL_VALUE + " LIKE \"" + value + "\"",
 		null, null, null, null);
 	return cursorToObject(c);
+    }
+
+    public List<KeyValue> getValuesLinkedWithName(final String name) {
+	// SELECT * FROM KeyValue v LEFT OUTER JOIN KeyName n ON v.key = n.key
+	// WHERE n.name = name
+	String kv = DbConstants.KEYVALUE_TABLE;
+	String kn = DbConstants.KEYNAME_TABLE;
+	String sql = "SELECT * FROM " + kv + " LEFT OUTER JOIN " + kn + " ON "
+		+ kv + "." + DbConstants.KEYVALUE_COL_KEY + " = " + kn + "."
+		+ DbConstants.KEYNAME_COL_KEY + " WHERE " + kn + "."
+		+ DbConstants.KEYNAME_COL_NAME + " = '" + name + "'";
+	Cursor c = mDb.rawQuery(sql, null);
+	return cursorToObjectList(c);
     }
 
     @Override

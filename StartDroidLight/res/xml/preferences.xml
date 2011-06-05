@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/SApref_helptitle">
+		<Preference
+			android:title="@string/SApref_faq"
+			android:key="FAQPref" />
+		<Preference
+			android:title="@string/SApref_about"
+			android:key="AboutPref" />
+	</PreferenceCategory>
+	
+	<PreferenceCategory android:title="@string/SApref_severaltitle">
+		<Preference
+			android:title="@string/SApref_feedback"
+			android:key="FeedbackPref" />
+		<Preference
+			android:title="@string/SApref_share"
+			android:key="SharePref" />
+		<Preference
+			android:title="@string/SApref_friend"
+			android:key="FriendPref" />
+		<Preference
+			android:title="@string/SApref_init"
+			android:key="InitPref" />
+	</PreferenceCategory>
+	
+	<PreferenceCategory android:title="@string/SApref_closetitle">
+		<Preference
+			android:title="@string/SApref_close"
+			android:key="ClosePref" />
+	</PreferenceCategory>
+</PreferenceScreen>

@@ -6,13 +6,16 @@
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name"
 		android:theme="@style/Theme.GeneralTheme.Home">
-		<activity android:name=".ui.demo.Demo_Sqlite_CRUDActivity"
+		<activity android:name=".ui.demo.Demo_Sqlite_HostActivity"
 			android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity android:name=".ui.demo.Demo_Sqlite_CRUDActivity"></activity>
+		<activity android:name=".ui.demo.Demo_Sqlite_SelectActivity"></activity>
+		<activity android:name=".ui.demo.Demo_Sqlite_AdminActivity"></activity>
 		<activity android:name=".ui.StartActivity"></activity>
 	</application>
 </manifest>

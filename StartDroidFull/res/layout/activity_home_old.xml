@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <com.lknuchel.android.startdroidfull.ui.widget.ActionBar
+        android:id="@+id/homeactionbar"
+        style="@style/ActionBar"
+        />
+    
+    
+ 	<com.lknuchel.android.startdroidfull.ui.widget.Dashboard
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+ 
+        <Button android:id="@+id/home_layout_btn"
+            style="@style/DashboardButton"
+            android:text="@string/HA_layout_btn"
+            android:drawableTop="@drawable/more" />
+ 
+        <Button android:id="@+id/home_services_btn"
+            style="@style/DashboardButton"
+            android:text="@string/HA_services_btn"
+            android:drawableTop="@drawable/more" />
+ 
+        <Button android:id="@+id/home_1_btn"
+            style="@style/DashboardButton"
+            android:text="@string/HA_1_btn"
+            android:drawableTop="@drawable/more" />
+ 
+        <Button android:id="@+id/home_2_btn"
+            style="@style/DashboardButton"
+            android:text="@string/HA_2_btn"
+            android:drawableTop="@drawable/more" />   
+ 
+        <Button android:id="@+id/home_3_btn"
+            style="@style/DashboardButton"
+            android:text="@string/HA_3_btn"
+            android:drawableTop="@drawable/more" />   
+ 
+        <Button android:id="@+id/home_4_btn"
+            style="@style/DashboardButton"
+            android:text="@string/HA_4_btn"
+            android:drawableTop="@drawable/more" />    
+ 
+    </com.lknuchel.android.startdroidfull.ui.widget.Dashboard>
+	
+</LinearLayout>

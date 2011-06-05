@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="styleLists">
+          <item>simple_list_item_1</item>
+          <item>simple_list_item_checked</item>
+          <item>simple_list_item_multiple_choice</item>
+          <item>simple_list_item_single_choice</item>
+     </string-array>
+     
+     <string-array name="nbLivres">
+          <item>10 livres</item>
+          <item>8 livres</item>
+          <item>5 livres</item>
+          <item>2 livres</item>
+     </string-array>
+</resources>

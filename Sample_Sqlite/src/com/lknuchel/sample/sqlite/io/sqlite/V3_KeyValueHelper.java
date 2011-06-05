@@ -13,13 +13,8 @@ public class V3_KeyValueHelper extends V3_DbAdapterImpl<KeyValue> {
 
 	dbTable = DbConstants.KEYVALUE_TABLE;
 	idCol = DbConstants.KEYVALUE_COL_ID;
-
-	DatabaseHelper.CREATE_TABLE = "CREATE TABLE " + dbTable + "(" + idCol
-		+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-		+ DbConstants.KEYVALUE_COL_KEY + " TEXT NOT NULL, "
-		+ DbConstants.KEYVALUE_COL_VALUE + " TEXT NOT NULL);";
     }
-    
+
     public KeyValue getWithKey(final String key) {
 	Cursor c = mDb.query(dbTable, allColumns(),
 		DbConstants.KEYVALUE_COL_KEY + " LIKE \"" + key + "\"", null,

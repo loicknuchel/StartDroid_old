@@ -11,14 +11,36 @@
     <string name="no">Non</string>
     
 <!-- StartActivity textes -->
-
+    
+<!-- Demo_Sqlite_HostActivity textes -->
+    <string name="DSHA_CRUD1">CRUD\nvalues</string>
+    <string name="DSHA_CRUD2">CRUD\nnames</string>
+    <string name="DSHA_select">multi select</string>
+    <string name="DSHA_admin">admin DB</string>
 <!-- Demo_Sqlite_CRUDActivity textes -->
+    <string name="DSCA_tuto">
+		Cet écran vous permet de tester les différentes fonctionnalités basiques de sqlite.
+		\nVous pouvez :
+		\n - créer une entrée
+		\n - voir les entrées existantes
+		\n - supprimer une entrée avec un appui long
+		\n
+		\nHave fun :)
+	</string>
     <string name="DSCA_keyvalue">keyValue</string>
     <string name="DSCA_id">id</string>
     <string name="DSCA_key">clé</string>
     <string name="DSCA_value">valeur</string>
+    <string name="DSCA_name">nom</string>
     <string name="DSCA_create">Créer</string>
     <string name="DSCA_created">KeyValue created.</string>
     <string name="DSCA_positionClicked">Click on position</string>
     <string name="DSCA_removed">removed</string>
+<!-- Demo_Sqlite_SelectActivity textes -->
+    <string name="DSSA_name">nom</string>
+    <string name="DSSA_search">Affiche les valeurs possédant la même clé que le nom.</string>
+<!-- Demo_Sqlite_AdminActivity textes -->
+    <string name="DSAA_fill">Remplir la base de données</string>
+    <string name="DSAA_drop">Vider la base de données</string>
+    
 </resources>

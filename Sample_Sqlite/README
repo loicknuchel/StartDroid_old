@@ -8,7 +8,13 @@
 	StartDroid est un starter de projet Android.
 	Project from https://github.com/loicknuchel/StartDroid
 
-Sample_Sqlite montre les possibilités offertes par la base de donnée Sqlite et comment les implémenter.
-L'application est constituée d'un éditeur CRUD (Create, Read, Update et Delete) qui permet de tester les fonctionnalités implémentées et de différents niveaux d'implémentation de la base Sqlite. Cela va de la gestion basique (V0) à une gestion et une organisation de plus en plus avancée.
+Sample_Sqlite est un projet portant sur la persistance de donnée sous android à l'aide de Sqlite.
+Le projet contient différentes manières de gérer une base de donnée Sqlite, de la plus basique à la plus avancée et structurée. Le projet se présente sous forme d'un CRUD (Create, Read, Update, Delete) et permet ainsi de tester bon nombre de fonctionnalités Sqlite.
 
-Pour tout commentaire, question, suggestion ou signalisation de bug vous pouvez me joindre par mail à loicknuchel@gmail.com ou sur twitter @loicknuchel
+Voici quelques liens qui m'ont aidé à faire ce projet :
+Commencement facile : http://www.tutomobile.fr/comment-utiliser-sqlite-sous-android-tutoriel-android-n%C2%B019/19/10/2010/
+Foreign key manuelles : http://www.codeproject.com/KB/android/AndroidSQLite.aspx
+	
+Pour toute remarque, suggestion ou bug vous pouvez me contacter par mail : loicknuchel@gmail.com
+ou sur twitter : @loicknuchel
+Je suis très ouvert à toute discution sur le projet ainsi qu'à toute proposition de structuration du projet ou d'ajout de fonctionnalité.

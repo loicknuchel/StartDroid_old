@@ -6,7 +6,6 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.lknuchel.sample.lists.R;
@@ -31,7 +30,7 @@ public class Demo_ListView_AdapterActivity extends Activity {
     }
 
     private void setUp() {
-	lvListe = (ListView) findViewById(R.activity_demo_listview_main.lvListe);
+	lvListe = (ListView) findViewById(R.activity_demo_listview_adapter.lvListe);
 	RemplirLaBibliotheque();
 
 	AdapterLivre livreadapter = new AdapterLivre(c, maBibliotheque);

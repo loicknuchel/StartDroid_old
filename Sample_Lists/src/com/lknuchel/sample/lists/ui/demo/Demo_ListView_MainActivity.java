@@ -16,7 +16,7 @@ public class Demo_ListView_MainActivity extends Activity {
     private Activity a;
     private Context c;
     private ListView lvListe;
-    private String[] listeStrings = { "Basic lists", "Adapter lists" };
+    private String[] listStrings = { "Basic list", "Adapter list", "Complex adapter list" };
 
     /** Called when the activity is first created. */
     @Override
@@ -33,7 +33,7 @@ public class Demo_ListView_MainActivity extends Activity {
 	lvListe = (ListView) findViewById(R.activity_demo_listview_main.lvListe);
 
 	lvListe.setAdapter(new ArrayAdapter<String>(c,
-		android.R.layout.simple_list_item_1, listeStrings));
+		android.R.layout.simple_list_item_1, listStrings));
     }
 
     private void onCLickValidate() {
@@ -49,6 +49,10 @@ public class Demo_ListView_MainActivity extends Activity {
 		    break;
 		case 1:
 		    i = new Intent(c, Demo_ListView_AdapterActivity.class);
+		    startActivity(i);
+		    break;
+		case 2:
+		    i = new Intent(c, Demo_ListView_ComplexAdapterActivity.class);
 		    startActivity(i);
 		    break;
 		default:

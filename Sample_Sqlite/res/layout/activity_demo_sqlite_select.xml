@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:focusable="true" 
+    android:focusableInTouchMode="true"
+	android:orientation="vertical" 
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	
+    <EditText
+		android:id="@+activity_demo_sqlite_select/nameEdit" 
+		android:hint="@string/DSSA_name"
+		android:layout_width="match_parent" 
+		android:layout_height="wrap_content" />
+	<Button 
+		android:id="@+activity_demo_sqlite_select/search" 
+		android:text="@string/DSSA_search"
+		android:layout_width="match_parent" 
+		android:layout_height="wrap_content" />
+		
+	<ListView
+	    android:id="@+activity_demo_sqlite_select/results"
+	    android:layout_width="match_parent" 
+	    android:layout_height="wrap_content"
+	    android:padding="10px"
+	    android:cacheColorHint="#00000000"
+	    />
+		
+</LinearLayout>
